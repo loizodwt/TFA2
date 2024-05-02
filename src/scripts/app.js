@@ -14,9 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-
   function bringToFront(window) {
-    const windows = document.querySelectorAll('.window, .window--project-details'); // Inclure les fenêtres de détails du projet
+    const windows = document.querySelectorAll('.window,.window--project-details'); // Inclure les fenêtres de détails du projet
     let maxZIndex = 1;
   
     // Trouver le niveau de z-index maximum parmi toutes les fenêtres
@@ -65,6 +64,28 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   function createProjectDetailsWindow(content) {
     const projectDetailsWindow = document.createElement('div');
@@ -151,6 +172,26 @@ document.addEventListener('DOMContentLoaded', () => {
       document.onmousemove = null;
     }
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 });
 
