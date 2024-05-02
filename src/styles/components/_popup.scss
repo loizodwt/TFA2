@@ -39,7 +39,8 @@
   width: 500px;
   height: 400px;
   background-color: white;
-  border: 1px solid black;
+  border: 5px solid #F1DCEF;
+  border-radius: 5px;
   display: none;
   left: 50%;
   top: 50%;
@@ -55,21 +56,27 @@
   &--paint,
   &--music {
     .title-bar {
-      background-color: #f0f0f0;
-      border-bottom: 1px solid black;
+      background-color: #F1DCEF;
       padding: 5px;
       display: flex;
       justify-content: space-between;
+      align-items: center;
+  
 
       .title {
         font-weight: bold;
       }
-
-      .controls {
+  
+      .title-bar__controls {
         display: flex;
-
+        background-color: #F5F5F5;
+        padding: 5px;
+        border-radius: 5px;
+ 
+  
         div {
-          margin-left: 5px;
+          padding-left: 10px;
+          padding-right: 10px;
           cursor: pointer;
         }
       }
@@ -77,7 +84,12 @@
 
     .content {
       padding: 10px;
-    }
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: flex-start;
+      
+  
 
     .project-list {
       display: flex;
@@ -86,24 +98,25 @@
       padding: 10px;
       justify-content: flex-start; // Pour aligner les icônes à gauche
     }
-
     .project {
       display: flex;
       flex-direction: column;
       align-items: center;
       text-align: center;
-      width: 100px; // Largeur de chaque icône
-      cursor: pointer; // Curseur de la souris pour indiquer que l'élément est cliquable
+      width: 100px;
+      cursor: pointer;
 
-      img {
-        width: 60px; // Taille de l'image de l'icône
-        height: 60px;
-        margin-bottom: 5px; // Espace entre l'image et le nom du projet
-      }
+    }
+ 
+    img {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 5px;
+    }
 
-      span {
-        font-size: 12px; // Taille de la police pour le nom du projet
-      }
+    span {
+      font-size: 12px;
+    }
     }
   }
 }
@@ -126,3 +139,57 @@
 #pinkButton {
   background-color: #FFC0CB;
 }
+
+
+
+/*
+.window {
+  &--projects {
+    .title-bar {
+      &__title {
+        // styles pour le titre de la barre de titre
+      }
+
+      &__controls {
+        // styles pour les contrôles de la barre de titre
+      }
+    }
+
+    .filter-buttons {
+      // styles pour le conteneur des boutons de filtrage
+    }
+
+    .filter-button {
+      // styles de base pour les boutons de filtrage
+      &--personal {
+        // styles spécifiques au bouton de filtrage "Personal"
+      }
+
+      &--school {
+        // styles spécifiques au bouton de filtrage "School"
+      }
+    }
+
+    .content {
+      // styles pour le contenu des projets
+      .project-list {
+        // styles pour la liste des projets
+        .project {
+          // styles de base pour chaque projet
+          &--personal {
+            // styles spécifiques aux projets personnels
+          }
+
+          &--school {
+            // styles spécifiques aux projets scolaires
+          }
+
+          &__name {
+            // styles pour le nom du projet
+          }
+        }
+      }
+    }
+  }
+}
+*/

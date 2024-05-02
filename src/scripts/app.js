@@ -1,4 +1,3 @@
-"use strict";
 
 "use strict";
 
@@ -15,17 +14,24 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+
   function bringToFront(window) {
-    const windows = document.querySelectorAll('.window');
+    const windows = document.querySelectorAll('.window, .window--project-details'); // Inclure les fenêtres de détails du projet
     let maxZIndex = 1;
+  
+    // Trouver le niveau de z-index maximum parmi toutes les fenêtres
     windows.forEach(win => {
       const zIndex = parseInt(win.style.zIndex);
       if (!isNaN(zIndex) && zIndex > maxZIndex) {
         maxZIndex = zIndex;
       }
     });
+  
+    // Mettre la fenêtre spécifique au premier plan
     window.style.zIndex = maxZIndex + 1;
   }
+  
+  
 
   const windows = document.querySelectorAll('.window');
   windows.forEach(window => {
@@ -42,6 +48,73 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
   });
+
+  const projects = document.querySelectorAll('.project');
+  let activeProjectDetailsWindows = {}; // Garder une référence à la fenêtre active pour chaque projet
+
+  projects.forEach(project => {
+    project.addEventListener('click', () => {
+      const projectId = project.getAttribute('data-id');
+      const content = project.getAttribute('data-content');
+      if (!activeProjectDetailsWindows[projectId]) {
+        activeProjectDetailsWindows[projectId] = createProjectDetailsWindow(content);
+        activeProjectDetailsWindows[projectId].classList.add('active');
+        makeDraggable(activeProjectDetailsWindows[projectId]); // Rendre la fenêtre draggable
+      } else {
+        bringToFront(activeProjectDetailsWindows[projectId]);
+      }
+    });
+  });
+
+  function createProjectDetailsWindow(content) {
+    const projectDetailsWindow = document.createElement('div');
+    projectDetailsWindow.classList.add('window', 'window--project-details');
+  
+    const titleBar = document.createElement('div');
+    titleBar.classList.add('title-bar');
+  
+    const title = document.createElement('div');
+    title.classList.add('title-bar__title');
+    title.textContent = 'Project Details';
+  
+    const controls = document.createElement('div');
+    controls.classList.add('title-bar__controls');
+  
+    const minimize = document.createElement('div');
+    minimize.classList.add('title-bar__minimize');
+    minimize.textContent = '_';
+  
+    const maximize = document.createElement('div');
+    maximize.classList.add('title-bar__maximize');
+    maximize.textContent = '[]';
+  
+    const close = document.createElement('div');
+    close.classList.add('title-bar__close');
+    close.textContent = 'X';
+  
+    controls.appendChild(minimize);
+    controls.appendChild(maximize);
+    controls.appendChild(close);
+  
+    titleBar.appendChild(title);
+    titleBar.appendChild(controls);
+  
+    const contentContainer = document.createElement('div');
+    contentContainer.classList.add('content', 'project-details-content');
+    contentContainer.textContent = content;
+  
+    projectDetailsWindow.appendChild(titleBar);
+    projectDetailsWindow.appendChild(contentContainer);
+  
+    // Ajouter la fenêtre en tant qu'enfant du corps du document
+    document.body.appendChild(projectDetailsWindow);
+  
+    close.addEventListener('click', () => {
+      projectDetailsWindow.classList.remove('active');
+    });
+  
+    return projectDetailsWindow;
+  }
   
 
   function makeDraggable(element) {
@@ -78,6 +151,7 @@ document.addEventListener('DOMContentLoaded', () => {
       document.onmousemove = null;
     }
   }
+
 });
 
 // L'autre code JavaScript reste inchangé
@@ -139,21 +213,7 @@ if (paintWindow) {
   });
 }
 
-const personalFolder = document.querySelector('.window--me .content #personalFolder');
-if (personalFolder) {
-  personalFolder.addEventListener('click', () => {
-    document.querySelector('.window--me .content #personalProjects').style.display = 'flex';
-    document.querySelector('.window--me .content #schoolProjects').style.display = 'none';
-  });
-}
 
-const schoolFolder = document.querySelector('.window--me .content #schoolFolder');
-if (schoolFolder) {
-  schoolFolder.addEventListener('click', () => {
-    document.querySelector('.window--me .content #schoolProjects').style.display = 'flex';
-    document.querySelector('.window--me .content #personalProjects').style.display = 'none';
-  });
-}
 
 
 // l'heure :3

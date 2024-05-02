@@ -63,6 +63,21 @@
     <div class="content">Contenu de la fenêtre "About"</div>
   </div>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   <div class="window window--projects">
     <div class="title-bar">
       <div class="title-bar__title">Projects</div>
@@ -72,8 +87,196 @@
         <div class="title-bar__close">X</div>
       </div>
     </div>
-    <div class="content">Contenu de la fenêtre "Projects"</div>
+    <div class="filter-buttons">
+      <button class="filter-button filter-button--personal">Personal</button>
+      <button class="filter-button filter-button--school">School</button>
+    </div>
+    <div class="content project-list">
+      <!-- Projets scolaires -->
+      <div class="project project--school" data-id="1" data-content="Contenu du projet scolaire 1">
+        <img src="./assets/images/folder.svg" alt="Projet scolaire 1">
+        <span class="project__name">Projet scolaire 1</span>
+      </div>
+      <div class="project project--school" data-id="2" data-content="Contenu du projet scolaire 2">
+        <img src="./assets/images/folder.svg" alt="Projet scolaire 2">
+        <span class="project__name">Projet scolaire 2</span>
+      </div>
+      <div class="project project--school" data-id="3" data-content="Contenu du projet scolaire 3">
+        <img src="./assets/images/folder.svg" alt="Projet scolaire 3">
+        <span class="project__name">Projet scolaire 3</span>
+      </div>
+      <div class="project project--school" data-id="4" data-content="Contenu du projet scolaire 4">
+        <img src="./assets/images/folder.svg" alt="Projet scolaire 4">
+        <span class="project__name">Projet scolaire 4</span>
+      </div>
+      <div class="project project--school" data-id="5" data-content="Contenu du projet scolaire 5">
+        <img src="./assets/images/folder.svg" alt="Projet scolaire 5">
+        <span class="project__name">Projet scolaire 5</span>
+      </div>
+      <!-- Projets personnels -->
+      <div class="project project--personal" data-id="6" data-content="Contenu du projet personnel 1">
+        <img src="./assets/images/folder.svg" alt="Projet personnel 1">
+        <span class="project__name">Projet personnel 1</span>
+      </div>
+      <div class="project project--personal" data-id="7" data-content="Contenu du projet personnel 2">
+        <img src="./assets/images/folder.svg" alt="Projet personnel 2">
+        <span class="project__name">Projet personnel 2</span>
+      </div>
+      <div class="project project--personal" data-id="8" data-content="Contenu du projet personnel 3">
+        <img src="./assets/images/folder.svg" alt="Projet personnel 3">
+        <span class="project__name">Projet personnel 3</span>
+      </div>
+    </div>
+    
+    <!-- Fenêtres pour les détails des projets -->
+    <div class="window window--project-details" data-project-id="1">
+      <div class="title-bar">
+        <div class="title-bar__title">Project Details</div>
+        <div class="title-bar__controls">
+          <div class="title-bar__minimize">_</div>
+          <div class="title-bar__maximize">[]</div>
+          <div class="title-bar__close">X</div>
+        </div>
+      </div>
+      <div class="content project-details-content">
+        <!-- Le contenu du projet sera affiché ici -->
+      </div>
+    </div><!-- Fenêtre pour le projet scolaire 1 -->
+    <div class="window window--project-details" data-project-id="1">
+      <div class="title-bar">
+        <div class="title-bar__title">Project Details - Projet scolaire 1</div>
+        <div class="title-bar__controls">
+          <div class="title-bar__minimize">_</div>
+          <div class="title-bar__maximize">[]</div>
+          <div class="title-bar__close">X</div>
+        </div>
+      </div>
+      <div class="content project-details-content">
+        <!-- Le contenu du projet scolaire 1 sera affiché ici -->
+      </div>
+    </div>
+    
+    <!-- Fenêtre pour le projet scolaire 2 -->
+    <div class="window window--project-details" data-project-id="2">
+      <div class="title-bar">
+        <div class="title-bar__title">Project Details - Projet scolaire 2</div>
+        <div class="title-bar__controls">
+          <div class="title-bar__minimize">_</div>
+          <div class="title-bar__maximize">[]</div>
+          <div class="title-bar__close">X</div>
+        </div>
+      </div>
+      <div class="content project-details-content">
+        <!-- Le contenu du projet scolaire 2 sera affiché ici -->
+      </div>
+    </div>
+    
+    <!-- Fenêtre pour le projet scolaire 3 -->
+    <div class="window window--project-details" data-project-id="3">
+      <div class="title-bar">
+        <div class="title-bar__title">Project Details - Projet scolaire 3</div>
+        <div class="title-bar__controls">
+          <div class="title-bar__minimize">_</div>
+          <div class="title-bar__maximize">[]</div>
+          <div class="title-bar__close">X</div>
+        </div>
+      </div>
+      <div class="content project-details-content">
+        <!-- Le contenu du projet scolaire 3 sera affiché ici -->
+      </div>
+    </div>
+    
+    <!-- Fenêtre pour le projet scolaire 4 -->
+    <div class="window window--project-details" data-project-id="4">
+      <div class="title-bar">
+        <div class="title-bar__title">Project Details - Projet scolaire 4</div>
+        <div class="title-bar__controls">
+          <div class="title-bar__minimize">_</div>
+          <div class="title-bar__maximize">[]</div>
+          <div class="title-bar__close">X</div>
+        </div>
+      </div>
+      <div class="content project-details-content">
+        <!-- Le contenu du projet scolaire 4 sera affiché ici -->
+      </div>
+    </div>
+    
+    <!-- Fenêtre pour le projet scolaire 5 --> 
+    <div class="window window--project-details" data-project-id="5">
+      <div class="title-bar">
+        <div class="title-bar__title">Project Details - Projet scolaire 5</div>
+        <div class="title-bar__controls">
+          <div class="title-bar__minimize">_</div>
+          <div class="title-bar__maximize">[]</div>
+          <div class="title-bar__close">X</div>
+        </div>
+      </div>
+      <div class="content project-details-content">
+        <!-- Le contenu du projet scolaire 5 sera affiché ici -->
+      </div>
+    </div>
+    
+    <!-- Fenêtre pour le projet personnel 1 -->
+    <div class="window window--project-details" data-project-id="6">
+      <div class="title-bar">
+        <div class="title-bar__title">Project Details - Projet personnel 1</div>
+        <div class="title-bar__controls">
+          <div class="title-bar__minimize">_</div>
+          <div class="title-bar__maximize">[]</div>
+          <div class="title-bar__close">X</div>
+        </div>
+      </div>
+      <div class="content project-details-content">
+        <!-- Le contenu du projet personnel 1 sera affiché ici -->
+      </div>
+    </div>
+    
+    <!-- Fenêtre pour le projet personnel 2 -->
+    <div class="window window--project-details" data-project-id="7">
+      <div class="title-bar">
+        <div class="title-bar__title">Project Details - Projet personnel 2</div>
+        <div class="title-bar__controls">
+          <div class="title-bar__minimize">_</div>
+          <div class="title-bar__maximize">[]</div>
+          <div class="title-bar__close">X</div>
+        </div>
+      </div>
+      <div class="content project-details-content">
+        <!-- Le contenu du projet personnel 2 sera affiché ici -->
+      </div>
+    </div>
+    
+    <!-- Fenêtre pour le projet personnel 3 -->
+    <div class="window window--project-details" data-project-id="8">
+      <div class="title-bar">
+        <div class="title-bar__title">Project Details - Projet personnel 3</div>
+        <div class="title-bar__controls">
+          <div class="title-bar__minimize">_</div>
+          <div class="title-bar__maximize">[]</div>
+          <div class="title-bar__close">X</div>
+        </div>
+      </div>
+      <div class="content project-details-content">
+        <!-- Le contenu du projet personnel 3 sera affiché ici -->
+      </div>
+    </div>
+    
   </div>
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
 
   <div class="window window--me">
     <div class="title-bar">
