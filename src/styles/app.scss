@@ -1,0 +1,46 @@
+@import 'utils/variables';
+@import 'components/footer';
+@import 'components/popup';
+/*@import 'components/chat';*/
+
+
+
+
+
+
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: "lores-12", sans-serif;
+  
+
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  background-image: url(../assets/images/loizo.png), url(../assets/images/back3.png);
+  background-size: 50% auto, auto; /* Taille maximale de 400px pour le premier arrière-plan */
+  background-repeat: no-repeat, repeat;
+  background-position: center, center;
+}
+
+
+.header {
+  text-align: center;
+}
+
+.content {
+  flex: 1;
+}
+
+
+
+
+
+
+
+
+

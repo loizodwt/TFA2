@@ -1,0 +1,128 @@
+.desktop {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column; 
+  align-items: flex-start;
+  margin-top: 20px;
+  width: 100%;
+  height: 100%;
+}
+
+.icon {
+  &--about,
+  &--projects,
+  &--me,
+  &--paint,
+  &--music {
+    width: 80px;
+    height: 80px;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+
+    img {
+      width: 50px; 
+      height: 50px;
+    }
+
+    span {
+      margin-top: 5px;
+    }
+  }
+}
+
+.window {
+  position: absolute;
+  width: 500px;
+  height: 400px;
+  background-color: white;
+  border: 1px solid black;
+  display: none;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  &.active {
+    display: block;
+  }
+
+  &--about,
+  &--projects,
+  &--me,
+  &--paint,
+  &--music {
+    .title-bar {
+      background-color: #f0f0f0;
+      border-bottom: 1px solid black;
+      padding: 5px;
+      display: flex;
+      justify-content: space-between;
+
+      .title {
+        font-weight: bold;
+      }
+
+      .controls {
+        display: flex;
+
+        div {
+          margin-left: 5px;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .content {
+      padding: 10px;
+    }
+
+    .project-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 10px;
+      justify-content: flex-start; // Pour aligner les icônes à gauche
+    }
+
+    .project {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      width: 100px; // Largeur de chaque icône
+      cursor: pointer; // Curseur de la souris pour indiquer que l'élément est cliquable
+
+      img {
+        width: 60px; // Taille de l'image de l'icône
+        height: 60px;
+        margin-bottom: 5px; // Espace entre l'image et le nom du projet
+      }
+
+      span {
+        font-size: 12px; // Taille de la police pour le nom du projet
+      }
+    }
+  }
+}
+
+.color-button {
+  width: 30px;
+  height: 30px;
+  border: none;
+  margin: 0px;
+}
+
+#blackButton {
+  background-color: #000000;
+}
+
+#greyButton {
+  background-color: #808080;
+}
+
+#pinkButton {
+  background-color: #FFC0CB;
+}
