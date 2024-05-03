@@ -15,7 +15,6 @@
   <script src="scripts/app.js" defer></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
 
   <link rel="stylesheet" href="https://use.typekit.net/scq6nmf.css">
 
@@ -29,22 +28,27 @@
 
 
   <div class="desktop">
-    <div class="icon icon--about" data-target="about">
-      <img src="./assets/images/folder.svg" alt="About" class="icon__image">
-      <span class="icon__text">About</span>
+
+    <div class="icon icon--me" data-target="me">
+      <img src="./assets/images/txt.png" alt="Welcome" class="icon__image">
+      <span class="icon__text">Welcome</span>
     </div>
+
+    <div class="icon icon--about" data-target="about">
+      <img src="./assets/images/folder.svg" alt="About me" class="icon__image">
+      <span class="icon__text">About me</span>
+    </div>
+
     <div class="icon icon--projects" data-target="projects">
-      <img src="./assets/images/folder.svg" alt="Projects" class="icon__image">
+      <img src="./assets/images/folder.svg" alt="Projects" class="icon__i mage">
       <span class="icon__text">Projects</span>
     </div>
-    <div class="icon icon--me" data-target="me">
-      <img src="./assets/images/folder.svg" alt="Me" class="icon__image">
-      <span class="icon__text">Me</span>
-    </div>
+
     <div class="icon icon--paint" data-target="paint">
       <img src="./assets/images/folder.svg" alt="Paint" class="icon__image">
       <span class="icon__text">Paint</span>
     </div>
+
     <div class="icon icon--music" data-target="music">
       <img src="./assets/images/folder.svg" alt="Music" class="icon__image">
       <span class="icon__text">Music</span>
@@ -53,14 +57,14 @@
 
   <div class="window window--about">
     <div class="title-bar">
-      <div class="title-bar__title">About</div>
+      <div class="title-bar__title">About me</div>
       <div class="title-bar__controls">
         <div class="title-bar__minimize">_</div>
         <div class="title-bar__maximize">[]</div>
         <div class="title-bar__close">X</div>
       </div>
     </div>
-    <div class="content">Contenu de la fenêtre "About"</div>
+    <div class="content">Contenu de la fenêtre "About me"</div>
   </div>
 
 
@@ -280,15 +284,24 @@
 
   <div class="window window--me">
     <div class="title-bar">
-      <div class="title-bar__title">Me</div>
+      <div class="title-bar__title">Welcome</div>
       <div class="title-bar__controls">
         <div class="title-bar__minimize">_</div>
         <div class="title-bar__maximize">[]</div>
         <div class="title-bar__close">X</div>
       </div>
     </div>
-    <div class="content">Contenu de la fenêtre "Me"</div>
+    <div class="content">Contenu de la fenêtre "Welcome"</div>
   </div>
+
+
+
+
+
+
+
+
+
 
   <div class="window window--paint">
     <div class="title-bar">
@@ -299,8 +312,30 @@
         <div class="title-bar__close">X</div>
       </div>
     </div>
-    <div class="content">Contenu de la fenêtre "Paint"</div>
+    <div class="content">
+      <canvas id="paintCanvas" width="480" height="300"></canvas>
+      <div>
+        <button id="blackButton" class="color-button"></button>
+        <button id="greyButton" class="color-button"></button>
+        <button id="pinkButton" class="color-button"></button>
+        <button id="saveButton">Save</button>
+      </div>
+    </div>
   </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   <div class="window window--music">
     <div class="title-bar">
