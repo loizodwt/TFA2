@@ -188,9 +188,38 @@
 
 
 
+.window--about {
+  .about-content {
+    .about-section {
+      .about-section__content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between; /* Pour séparer le texte et l'image */
 
+        .about-section__text {
+          flex: 1;
+          margin-right: 20px; /* Espace entre le texte et l'image */
+          max-width: 400px;
+        }
 
+        .about-section__image {
+          flex-shrink: 0;
+     
 
+          img {
+            max-width: 100%;
+            height: auto;
+          }
+        }
+      }
+
+      .about-section__columns {
+        display: flex;
+        justify-content: space-between; /* Pour créer deux colonnes */
+      }
+    }
+  }
+}
 
 
 
@@ -213,6 +242,11 @@
 #pinkButton {
   background-color: #FFC0CB;
 }
+
+
+
+
+
 
 
 
