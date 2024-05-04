@@ -2,17 +2,51 @@
 "use strict";
 
 document.addEventListener('DOMContentLoaded', () => {
-  const icons = document.querySelectorAll('.icon');
-  icons.forEach(icon => {
-    icon.addEventListener('click', () => {
-      const target = icon.getAttribute('data-target');
-      const window = document.querySelector(`.window--${target}`);
-      if (window) {
-        window.classList.add('active');
-        bringToFront(window);
-      }
-    });
+/////filtre perso scolaire
+
+const personalButton = document.querySelector('.filter-button--personal');
+const schoolButton = document.querySelector('.filter-button--school');
+const personalProjects = document.querySelectorAll('.project--personal');
+const schoolProjects = document.querySelectorAll('.project--school');
+
+// Cacher les projets personnels au chargement de la page
+hideProjects(personalProjects);
+
+personalButton.addEventListener('click', () => {
+  hideProjects(schoolProjects);
+  showProjects(personalProjects);
+});
+
+schoolButton.addEventListener('click', () => {
+  hideProjects(personalProjects);
+  showProjects(schoolProjects);
+});
+
+const icons = document.querySelectorAll('.icon');
+icons.forEach(icon => {
+  icon.addEventListener('click', () => {
+    const target = icon.getAttribute('data-target');
+    const window = document.querySelector(`.window--${target}`);
+    if (window) {
+      window.classList.add('active');
+      bringToFront(window);
+    }
   });
+});
+
+function hideProjects(projects) {
+  projects.forEach(project => {
+    project.style.display = 'none';
+  });
+}
+
+function showProjects(projects) {
+  projects.forEach(project => {
+    project.style.display = 'flex';
+  });
+}
+////perso sco
+
 
   function bringToFront(window) {
     const windows = document.querySelectorAll('.window,.window--project-details'); // Inclure les fenêtres de détails du projet

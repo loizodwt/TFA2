@@ -87,14 +87,24 @@
       }
     }
 
+
+
+
+
+
+      
+
+
+
     .content {
       padding: 10px;
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
       justify-content: flex-start;
+
       
-  
+
 
     .project-list {
       display: flex;
@@ -102,6 +112,8 @@
       gap: 10px;
       padding: 10px;
       justify-content: flex-start; // Pour aligner les icônes à gauche
+   
+     
     }
     .project {
       display: flex;
@@ -124,6 +136,8 @@
       font-size: 12px;
     }
     }
+
+    
   }
 }
 
@@ -252,6 +266,45 @@
 .about-column__title {
   margin-top: 10px; 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+.filter-buttons {
+  .filter-button {
+    margin-top: 20px;
+    margin-left: 10px;
+    background-color: #d4c2d3;
+    margin-right: 5px; // Ajoutez une marge entre les boutons si nécessaire
+    padding: 10px 15px; // Ajoutez du rembourrage pour un meilleur aspect
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s; // Ajoutez une transition pour un effet de changement de couleur fluide
+  
+
+    &:focus{
+      background-color: #F1DCEF; // Changez la couleur lorsqu'il n'est pas en focus
+    }
+    
+  }
+}
+
+.content.project-list {
+  background-color: #F1DCEF; // Changez la couleur de fond en noir
+  margin: 10px;
+  margin-top: 0px;
+}
+
 
 
 .color-button {
