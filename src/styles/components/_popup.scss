@@ -146,6 +146,20 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .window--project-details {
   position: absolute;
   width: 500px;
@@ -307,6 +321,53 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.window--paint {
+  .content {
+    display: flex;
+    justify-content: space-between; // Pour aligner les éléments à gauche et à droite
+    align-items: center; // Pour aligner les éléments verticalement au centre
+
+    .window--paint_controls {
+      display: flex;
+      align-items: center;
+
+      .color-button {
+        margin-right: 5px; // Ajoutez une marge à droite entre les boutons de couleur
+      }
+    }
+
+    #saveButton {
+      margin-left: auto; // Pour pousser le bouton "Save" vers la droite
+    }
+  }
+}
+
+
+
 .color-button {
   width: 30px;
   height: 30px;
@@ -325,6 +386,18 @@
 #pinkButton {
   background-color: #FFC0CB;
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
