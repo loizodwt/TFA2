@@ -40,8 +40,8 @@
 
 .window {
   position: absolute;
-  width: 500px;
-  height: 400px;
+  width: 600px;
+  height: auto;
   background-color: white;
   border: 5px solid #F1DCEF;
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
@@ -186,9 +186,9 @@
 
 
 
-
-
 .window--about {
+  height: auto;
+
   .about-content {
     .about-section {
       .about-section__content {
@@ -204,11 +204,11 @@
 
         .about-section__image {
           flex-shrink: 0;
-     
+          margin-left: 10px;
 
           img {
-            max-width: 100%;
-            height: auto;
+            width: 150px;
+            height: 150px;
           }
         }
       }
@@ -216,12 +216,42 @@
       .about-section__columns {
         display: flex;
         justify-content: space-between; /* Pour créer deux colonnes */
+        
+        .about-column {
+          flex: 1; /* Pour que chaque colonne prenne la moitié de l'espace disponible */
+          margin-right: 100px; /* Espace entre les colonnes */
+          
+          .about-column__list {
+            list-style-type: none; /* Supprimer les puces */
+            padding: 0;
+            margin: 10px;
+
+            .about-column__item {
+              position: relative; /* Pour positionner l'icône SVG */
+              padding-left: 20px; /* Espace pour l'icône */
+
+              &:before {
+                content: url('../../assets/images/arrow2.png'); /* Remplacez le chemin de l'image par le vôtre */
+                position: absolute;
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%);
+              }
+            }
+          }
+        }
+
+        .about-column:last-child {
+          margin-right: 0; /* Aucun espace à droite pour la dernière colonne */
+        }
       }
     }
   }
 }
 
-
+.about-column__title {
+  margin-top: 10px; 
+}
 
 
 .color-button {
@@ -247,8 +277,45 @@
 
 
 
+.rotation-span {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.rotation-span img {
+  width: 24px; /* Correction de la valeur de largeur */
+  height: 24px;
+  animation: rotateAnimation 1s infinite alternate; /* Utilisation de l'option "alternate" pour alterner la direction de l'animation */
+}
+
+@keyframes rotateAnimation {
+  0% {
+    transform: rotate(0deg); /* L'angle de départ est de 0 degré (gauche) */
+  }
+  100% {
+    transform: rotate(30deg); /* À la fin de l'animation, l'angle de rotation est de 30 degrés (droite) */
+  }
+}
 
 
+
+@media screen and (max-width: 768px) {
+  .window {
+    width: 450px; 
+  }
+
+  .about-section__image img {
+    margin: 0%;
+    padding: 0%;
+    width: 50px; /* Redimensionner l'image à 100px de largeur sur les appareils mobiles */
+    height: 50px; /* Redimensionner l'image à 100px de hauteur sur les appareils mobiles */
+  }
+
+  .about-section__text {
+    width: 250px; /* Augmenter la largeur maximale du texte à 300px sur les appareils mobiles */
+  }
+}
 
 
 

@@ -28,6 +28,16 @@ document.addEventListener('DOMContentLoaded', () => {
   
     // Mettre la fenêtre spécifique au premier plan
     window.style.zIndex = maxZIndex + 1;
+  
+    // Gestionnaires d'événements pour les événements tactiles
+    window.addEventListener('touchstart', onTouchStart, { passive: false });
+  
+    function onTouchStart() {
+      windows.forEach(win => {
+        win.style.zIndex = parseInt(win.style.zIndex) - 1;
+      });
+      window.style.zIndex = maxZIndex + 1;
+    }
   }
   
   
@@ -141,12 +151,16 @@ document.addEventListener('DOMContentLoaded', () => {
   function makeDraggable(element) {
     let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
     const titleBar = element.querySelector('.title-bar');
+  
+    // Événement de souris pour les ordinateurs de bureau
     if (titleBar) {
       titleBar.onmousedown = dragMouseDown;
+      titleBar.addEventListener('touchstart', onTouchStart, { passive: false });
     } else {
       element.onmousedown = dragMouseDown;
+      element.addEventListener('touchstart', onTouchStart, { passive: false });
     }
-
+  
     function dragMouseDown(e) {
       e = e || window.event;
       e.preventDefault();
@@ -155,7 +169,31 @@ document.addEventListener('DOMContentLoaded', () => {
       document.onmouseup = closeDragElement;
       document.onmousemove = elementDrag;
     }
-
+  
+    function onTouchStart(e) {
+      const touch = e.touches[0];
+      pos3 = touch.clientX;
+      pos4 = touch.clientY;
+      element.addEventListener('touchmove', onTouchMove, { passive: false });
+      element.addEventListener('touchend', onTouchEnd);
+    }
+  
+    function onTouchMove(e) {
+      const touch = e.touches[0];
+      e.preventDefault();
+      pos1 = pos3 - touch.clientX;
+      pos2 = pos4 - touch.clientY;
+      pos3 = touch.clientX;
+      pos4 = touch.clientY;
+      element.style.top = (element.offsetTop - pos2) + "px";
+      element.style.left = (element.offsetLeft - pos1) + "px";
+    }
+  
+    function onTouchEnd() {
+      element.removeEventListener('touchmove', onTouchMove);
+      element.removeEventListener('touchend', onTouchEnd);
+    }
+  
     function elementDrag(e) {
       e = e || window.event;
       e.preventDefault();
@@ -166,14 +204,13 @@ document.addEventListener('DOMContentLoaded', () => {
       element.style.top = (element.offsetTop - pos2) + "px";
       element.style.left = (element.offsetLeft - pos1) + "px";
     }
-
+  
     function closeDragElement() {
       document.onmouseup = null;
       document.onmousemove = null;
     }
   }
-
-
+  
 
 
 
