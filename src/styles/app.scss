@@ -4,6 +4,7 @@
 @import 'components/reglages';
 @import 'components/welcome';
 @import 'components/aboutme';
+@import 'components/projets';
 /*@import 'components/chat';*/
 
 
@@ -17,6 +18,7 @@ html, body{
   margin: 0;
   font-family: "lores-12", sans-serif;
   line-height: 150%;
+  overflow: hidden;
   
 
 }

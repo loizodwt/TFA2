@@ -129,8 +129,6 @@ function showProjects(projects) {
 
 
 
-
-
   function createProjectDetailsWindow(content) {
     const projectDetailsWindow = document.createElement('div');
     projectDetailsWindow.classList.add('window', 'window--project-details');
@@ -142,27 +140,12 @@ function showProjects(projects) {
     title.classList.add('title-bar__title');
     title.textContent = 'Project Details';
   
-    const controls = document.createElement('div');
-    controls.classList.add('title-bar__controls');
-  
-    const minimize = document.createElement('div');
-    minimize.classList.add('title-bar__minimize');
-    minimize.textContent = '_';
-  
-    const maximize = document.createElement('div');
-    maximize.classList.add('title-bar__maximize');
-    maximize.textContent = '[]';
-  
     const close = document.createElement('div');
     close.classList.add('title-bar__close');
     close.textContent = 'X';
   
-    controls.appendChild(minimize);
-    controls.appendChild(maximize);
-    controls.appendChild(close);
-  
     titleBar.appendChild(title);
-    titleBar.appendChild(controls);
+    titleBar.appendChild(close);
   
     const contentContainer = document.createElement('div');
     contentContainer.classList.add('content', 'project-details-content');
