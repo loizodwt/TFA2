@@ -2,8 +2,7 @@
 "use strict";
 
 document.addEventListener('DOMContentLoaded', () => {
-
-
+  
 /////filtre perso scolaire et icon trigger
 
 const personalButton = document.querySelector('.filter-button--personal');
@@ -87,10 +86,6 @@ function showProjects(projects) {
     }
   }
   
-
-
-
-  //////////
   
 
   const windows = document.querySelectorAll('.window');
@@ -110,24 +105,24 @@ function showProjects(projects) {
   });
 
   const projects = document.querySelectorAll('.project');
+  let activeProjectDetailsWindows = {}; // Garder une référence à la fenêtre active pour chaque projet
 
   projects.forEach(project => {
     project.addEventListener('click', () => {
       const projectId = project.getAttribute('data-id');
-      const projectDetailsWindow = document.querySelector(`.window--project-details[data-project-id="${projectId}"]`);
-      
-      // Supprimer la classe 'active' de toutes les fenêtres de détails de projet
-      document.querySelectorAll('.window--project-details').forEach(window => {
-        window.classList.remove('active');
-      });
-  
-      // Ajouter la classe 'active' à la fenêtre de détails de projet correspondante
-      if (projectDetailsWindow) {
-        projectDetailsWindow.classList.add('active');
+      const content = project.getAttribute('data-content');
+      if (!activeProjectDetailsWindows[projectId]) {
+        activeProjectDetailsWindows[projectId] = createProjectDetailsWindow(content);
+        activeProjectDetailsWindows[projectId].classList.add('active');
+        makeDraggable(activeProjectDetailsWindows[projectId]); // Rendre la fenêtre draggable
+      } else {
+        bringToFront(activeProjectDetailsWindows[projectId]);
       }
     });
   });
-  
+
+
+
 
 
 
