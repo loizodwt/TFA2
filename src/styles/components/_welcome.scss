@@ -1,0 +1,47 @@
+.window {
+  &--me {
+    .title-bar {
+      background-color: #F1DCEF;
+      border-top: 1px solid #F1DCEF;
+      padding: 5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .title {
+        font-weight: bold;
+      }
+
+      .title-bar__controls {
+        display: flex;
+        background-color: #F5F5F5;
+        padding: 5px;
+        border-radius: 5px;
+
+        div {
+          padding-left: 10px;
+          padding-right: 10px;
+          cursor: pointer;
+        }
+      }
+    }
+
+    &__content {
+      &__paragraph {
+        text-align: center; // Pour centrer le texte horizontalement
+        font-size: 1.2em; // Ajuster la taille de la police selon vos besoins
+      }
+
+      &__image {
+        display: flex;
+        justify-content: center; // Centrer l'image horizontalement
+        margin-top: 20px; // Espacement par rapport au paragraphe
+
+        img {
+          max-width: 100%; // Rendre l'image plus grande tout en conservant son ratio
+          height: auto; // Ajuster automatiquement la hauteur pour conserver le ratio
+        }
+      }
+    }
+  }
+}

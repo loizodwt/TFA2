@@ -50,6 +50,7 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+  overflow: hidden;
 
   &.active {
     display: block;
@@ -57,11 +58,11 @@
 
   &--about,
   &--projects,
-  &--me,
   &--paint,
   &--reglages {
     .title-bar {
       background-color: #F1DCEF;
+      border-top: 1px solid #F1DCEF;
       padding: 5px;
       display: flex;
       justify-content: space-between;
@@ -176,6 +177,7 @@
   
   .title-bar {
     background-color: #F1DCEF;
+    border-top: 1px solid #F1DCEF;
     padding: 5px;
     display: flex;
     justify-content: space-between;
@@ -317,7 +319,19 @@
   background-color: #F1DCEF; // Changez la couleur de fond en noir
   margin: 10px;
   margin-top: 0px;
+  border-radius: 5px;
 }
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -462,54 +476,12 @@
 
 
 
-/*
+
 .window {
   &--projects {
     .title-bar {
-      &__title {
-        // styles pour le titre de la barre de titre
-      }
-
-      &__controls {
-        // styles pour les contrôles de la barre de titre
-      }
+     border: none;
     }
 
-    .filter-buttons {
-      // styles pour le conteneur des boutons de filtrage
-    }
-
-    .filter-button {
-      // styles de base pour les boutons de filtrage
-      &--personal {
-        // styles spécifiques au bouton de filtrage "Personal"
-      }
-
-      &--school {
-        // styles spécifiques au bouton de filtrage "School"
-      }
-    }
-
-    .content {
-      // styles pour le contenu des projets
-      .project-list {
-        // styles pour la liste des projets
-        .project {
-          // styles de base pour chaque projet
-          &--personal {
-            // styles spécifiques aux projets personnels
-          }
-
-          &--school {
-            // styles spécifiques aux projets scolaires
-          }
-
-          &__name {
-            // styles pour le nom du projet
-          }
-        }
-      }
-    }
   }
 }
-*/

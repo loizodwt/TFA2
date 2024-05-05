@@ -46,8 +46,13 @@ $padding: 10px;
   }
 
   .icon {
-    width: 36px; // Ajuste la taille des icônes
-    height: 36px; // Ajuste la taille des icônes
+    width: 30px; // Ajuste la taille des icônes
+    height: 30px; // Ajuste la taille des icônes
     margin-right: 15px;
   }
+  .icon.instagram-icon {
+    width: 25px; /* Ajustez la taille comme vous le souhaitez */
+    height: 25px; /* Ajustez la taille comme vous le souhaitez */
+  }
+  
 }
