@@ -8,8 +8,8 @@
       justify-content: space-between;
       align-items: center;
 
-      .title {
-        font-weight: bold;
+      .title-bar__title {
+        font-weight: bold; // Correction: Utilisation de .title-bar__title au lieu de .title
       }
 
       .title-bar__controls {
@@ -29,7 +29,7 @@
     &__content {
       &__paragraph {
         text-align: center; // Pour centrer le texte horizontalement
-        font-size: 1.2em; // Ajuster la taille de la police selon vos besoins
+        font-size: 2px; // Ajuster la taille de la police selon vos besoins
       }
 
       &__image {
@@ -38,7 +38,7 @@
         margin-top: 20px; // Espacement par rapport au paragraphe
 
         img {
-          max-width: 100%; // Rendre l'image plus grande tout en conservant son ratio
+          max-width: 100%; // Correction: Utilisation de 100% au lieu de 1000%
           height: auto; // Ajuster automatiquement la hauteur pour conserver le ratio
         }
       }

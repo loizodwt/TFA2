@@ -15,6 +15,13 @@
           margin-right: 20px; /* Espace entre le texte et l'image */
           max-width: 400px;
         }
+        
+        .about-section__title {
+           font-size: 30px;
+           margin: 0%;
+           padding: 0%;
+        }
+    
 
         .about-section__image {
           flex-shrink: 0;
@@ -72,3 +79,19 @@
 
 
 
+
+.lace-image-container {
+  position: relative;
+  width: 200%;
+  height: 50px;
+  overflow: hidden;
+}
+
+.lace-image {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  bottom: 0;
+  left: 5;
+  z-index: -1; 
+}
