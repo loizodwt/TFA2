@@ -141,73 +141,20 @@
 
 
 
+.lace-image-container {
+  position: relative;
+  width: 200%;
+  height: 50px;
+  overflow: hidden;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.window--paint {
-  .content {
-    display: flex;
-    justify-content: space-between; // Pour aligner les éléments à gauche et à droite
-    align-items: center; // Pour aligner les éléments verticalement au centreµ
-    
-
-    .window--paint_controls {
-      display: flex;
-      align-items: center;
- 
-
-      .color-button {
-        margin-right: 5px; // Ajoutez une marge à droite entre les boutons de couleur
-      }
-    }
-
-    #saveButton {
-      margin-left: auto; // Pour pousser le bouton "Save" vers la droite
-      border: none;
-      background-color: #F1DCEF;
-      padding: 10px 20px;
-      border-radius: 5px;
-    }
-  }
+.lace-image {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  bottom: 0;
+  left: 5;
+  z-index: -1; 
 }
 
 
@@ -215,24 +162,34 @@
 
 
 
-.color-button {
-  width: 30px;
-  height: 30px;
-  border: none;
-  margin: 0px;
-}
 
-#blackButton {
-  background-color: #000000;
-}
 
-#greyButton {
-  background-color: #808080;
-}
 
-#pinkButton {
-  background-color: #FFC0CB;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -273,6 +230,16 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
 @media screen and (max-width: 768px) {
   .window {
     width: 450px; 
@@ -292,12 +259,61 @@
 
 
 
+.window {
+  &--projects {
+    .title-bar {
+     border: none;
+    }
+
+  }
+
+  
+
+
+.lace-image-container {
+  width: 200%;
+  height: 50px;
+
+}
+
+.lace-image {
+  width: 100%;
+  bottom: 10;
+  left: 5;
+
+}
+}
 
 
 
 
 
 
+
+
+
+
+@media screen and (max-width: 500px) {
+  .window {
+    width: 340px; 
+  }
+
+  .about-section__image img {
+    display: none;
+
+  }
+
+  .about-section__text {
+    width: 250px; /* Augmenter la largeur maximale du texte à 300px sur les appareils mobiles */
+  }
+
+     
+  .about-section-column {
+    margin-right: 10px; /* Espace entre les colonnes */
+    max-width: 300px;
+
+  }
+}
 
 
 
