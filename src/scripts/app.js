@@ -2,7 +2,9 @@
 "use strict";
 
 document.addEventListener('DOMContentLoaded', () => {
-/////filtre perso scolaire
+
+
+/////filtre perso scolaire et icon trigger
 
 const personalButton = document.querySelector('.filter-button--personal');
 const schoolButton = document.querySelector('.filter-button--school');
@@ -48,6 +50,17 @@ function showProjects(projects) {
 ////perso sco
 
 
+
+
+
+
+
+
+
+
+///ZINDEXXXXXXXXXXX
+
+
   function bringToFront(window) {
     const windows = document.querySelectorAll('.window,.window--project-details'); // Inclure les fenêtres de détails du projet
     let maxZIndex = 1;
@@ -74,6 +87,10 @@ function showProjects(projects) {
     }
   }
   
+
+
+
+  //////////
   
 
   const windows = document.querySelectorAll('.window');
@@ -93,24 +110,24 @@ function showProjects(projects) {
   });
 
   const projects = document.querySelectorAll('.project');
-  let activeProjectDetailsWindows = {}; // Garder une référence à la fenêtre active pour chaque projet
 
   projects.forEach(project => {
     project.addEventListener('click', () => {
       const projectId = project.getAttribute('data-id');
-      const content = project.getAttribute('data-content');
-      if (!activeProjectDetailsWindows[projectId]) {
-        activeProjectDetailsWindows[projectId] = createProjectDetailsWindow(content);
-        activeProjectDetailsWindows[projectId].classList.add('active');
-        makeDraggable(activeProjectDetailsWindows[projectId]); // Rendre la fenêtre draggable
-      } else {
-        bringToFront(activeProjectDetailsWindows[projectId]);
+      const projectDetailsWindow = document.querySelector(`.window--project-details[data-project-id="${projectId}"]`);
+      
+      // Supprimer la classe 'active' de toutes les fenêtres de détails de projet
+      document.querySelectorAll('.window--project-details').forEach(window => {
+        window.classList.remove('active');
+      });
+  
+      // Ajouter la classe 'active' à la fenêtre de détails de projet correspondante
+      if (projectDetailsWindow) {
+        projectDetailsWindow.classList.add('active');
       }
     });
   });
-
-
-
+  
 
 
 
@@ -164,6 +181,22 @@ function showProjects(projects) {
     return projectDetailsWindow;
   }
   
+
+
+
+
+
+
+
+
+
+
+
+
+
+///DRAGABBLEEEEEEEEEEEEEEEEEE
+
+
 
   function makeDraggable(element) {
     let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
@@ -240,7 +273,8 @@ function showProjects(projects) {
 
 
 
-// Sélection des éléments
+// MUSIQUEEEEEEEEEE
+
 const audioPlayer = document.getElementById('audio-player');
 const audioTitle = document.querySelector('.audio-title');
 const audioImage = document.querySelector('.audio-image');
@@ -319,7 +353,7 @@ clicSounds.forEach(function(sound) {
 
 });
 
-// L'autre code JavaScript reste inchangé
+// PAINTTTTT
 
 
 const paintWindow = document.querySelector('.window--paint');
