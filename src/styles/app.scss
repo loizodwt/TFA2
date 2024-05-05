@@ -1,6 +1,7 @@
 @import 'utils/variables';
 @import 'components/footer';
 @import 'components/popup';
+@import 'components/reglages';
 /*@import 'components/chat';*/
 
 
@@ -9,7 +10,7 @@
 
 
 
-html, body {
+html, body{
   height: 100%;
   margin: 0;
   font-family: "lores-12", sans-serif;

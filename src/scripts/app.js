@@ -257,6 +257,76 @@ function showProjects(projects) {
 
 
 
+// Sélection des éléments
+const audioPlayer = document.getElementById('audio-player');
+const audioTitle = document.querySelector('.audio-title');
+const audioImage = document.querySelector('.audio-image');
+const prevButton = document.getElementById('prev-button');
+const nextButton = document.getElementById('next-button');
+const audioElements = document.querySelectorAll('audio');
+const volumeSlider = document.getElementById('volume-slider');
+
+
+function adjustVolume() {
+  const volumeValue = volumeSlider.value / 100; // Conversion de la valeur du slider en décimale
+  audioElements.forEach(audio => {
+      audio.volume = volumeValue; // Ajustement du volume pour chaque élément audio
+  });
+}
+
+volumeSlider.addEventListener('input', adjustVolume);
+
+adjustVolume();
+// Liste des musiques
+const musiques = [
+  { title: 'Musique 1', source: './assets/musiques/musique1.mp3', image: 'chemin/vers/image1.jpg' },
+  { title: 'Musique 2', source: './assets/musiques/musique2.mp3', image: 'chemin/vers/image2.jpg' },
+  { title: 'Musique 3', source: './assets/musiques/musique3.mp3', image: 'chemin/vers/image3.jpg' }
+];
+
+// Index de la musique actuellement jouée
+let currentMusicIndex = 0;
+
+// Fonction pour charger une musique
+function loadMusic(index) {
+  const music = musiques[index];
+  audioPlayer.src = music.source;
+  audioTitle.textContent = music.title;
+  audioImage.src = music.image;
+}
+
+// Charger la première musique au chargement de la page
+window.addEventListener('load', () => {
+  loadMusic(currentMusicIndex);
+});
+
+// Événement pour passer à la piste précédente
+prevButton.addEventListener('click', () => {
+  currentMusicIndex = (currentMusicIndex - 1 + musiques.length) % musiques.length;
+  loadMusic(currentMusicIndex);
+});
+
+// Événement pour passer à la piste suivante
+nextButton.addEventListener('click', () => {
+  currentMusicIndex = (currentMusicIndex + 1) % musiques.length;
+  loadMusic(currentMusicIndex);
+});
+
+
+///clic
+const clicSounds = document.querySelectorAll('.clic-audio');
+
+clicSounds.forEach(function(sound) {
+  sound.addEventListener('click', function() {
+    sound.play();
+  });
+});
+
+
+
+
+
+
 
 
 
@@ -348,6 +418,28 @@ updateClock();
 
 
 
+////french
+
+/*
+// Sélectionner le sélecteur de langue
+var langueSelect = document.querySelector('.reglages-section__select');
+
+// Écouter les changements de sélection de langue
+langueSelect.addEventListener('change', function() {
+  // Obtenir la langue sélectionnée
+  var langue = this.value;
+  
+  // Mettre à jour tous les textes du site en français
+  var elements = document.querySelectorAll('body *');
+  elements.forEach(function(element) {
+    if (element.tagName !== 'SCRIPT' && element.tagName !== 'STYLE') {
+      if (element.dataset.langFr) {
+        element.textContent = element.dataset.langFr;
+      }
+    }
+  });
+});
+*/
 
 //////CHAT
 /*

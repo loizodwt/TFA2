@@ -21,6 +21,10 @@
 </head>
 <body>
 
+  <audio src="./assets/musiques/clic.wav" class="clic-audio" style="display: none;"></audio>
+
+
+  
   <header class="header">
     <img src="" alt="">
     <a href="./chat.html">chat</a>
@@ -31,12 +35,12 @@
 
     <div class="icon icon--me" data-target="me">
       <img src="./assets/images/txt.png" alt="Welcome" class="icon__image">
-      <span class="icon__text">Welcome</span>
+      <span class="icon__text">Welcome.txt</span>
     </div>
 
     <div class="icon icon--about" data-target="about">
       <img src="./assets/images/folder.svg" alt="About me" class="icon__image">
-      <span class="icon__text">About me</span>
+      <span class="icon__text">About-me</span>
     </div>
 
     <div class="icon icon--projects" data-target="projects">
@@ -49,9 +53,9 @@
       <span class="icon__text">Paint</span>
     </div>
 
-    <div class="icon icon--music" data-target="music">
-      <img src="./assets/images/folder.svg" alt="Music" class="icon__image">
-      <span class="icon__text">Music</span>
+    <div class="icon icon--reglages" data-target="reglages">
+      <img src="./assets/images/folder.svg" alt="reglages" class="icon__image">
+      <span class="icon__text">reglages</span>
     </div>
   </div>
 
@@ -144,36 +148,36 @@
       <!-- Projets scolaires -->
       <div class="project project--school" data-id="1" data-content="Contenu du projet scolaire 1">
         <img src="./assets/images/folder.svg" alt="Projet scolaire 1">
-        <span class="project__name">Projet scolaire 1</span>
+        <span class="project__name">THISMAN?.EXE</span>
       </div>
       <div class="project project--school" data-id="2" data-content="Contenu du projet scolaire 2">
         <img src="./assets/images/folder.svg" alt="Projet scolaire 2">
-        <span class="project__name">Projet scolaire 2</span>
+        <span class="project__name">BOURGE.EXE</span>
       </div>
       <div class="project project--school" data-id="3" data-content="Contenu du projet scolaire 3">
         <img src="./assets/images/folder.svg" alt="Projet scolaire 3">
-        <span class="project__name">Projet scolaire 3</span>
+        <span class="project__name">DATAPLAY.EXE</span>
       </div>
       <div class="project project--school" data-id="4" data-content="Contenu du projet scolaire 4">
         <img src="./assets/images/folder.svg" alt="Projet scolaire 4">
-        <span class="project__name">Projet scolaire 4</span>
+        <span class="project__name">RUX.EXE</span>
       </div>
       <div class="project project--school" data-id="5" data-content="Contenu du projet scolaire 5">
         <img src="./assets/images/folder.svg" alt="Projet scolaire 5">
-        <span class="project__name">Projet scolaire 5</span>
+        <span class="project__name">HELLOWORLD.EXE</span>
       </div>
       <!-- Projets personnels -->
       <div class="project project--personal" data-id="6" data-content="Contenu du projet personnel 1">
         <img src="./assets/images/folder.svg" alt="Projet personnel 1">
-        <span class="project__name">Projet personnel 1</span>
+        <span class="project__name">THISMAN?.EXE</span>
       </div>
       <div class="project project--personal" data-id="7" data-content="Contenu du projet personnel 2">
         <img src="./assets/images/folder.svg" alt="Projet personnel 2">
-        <span class="project__name">Projet personnel 2</span>
+        <span class="project__name">MAYONNAISE.EXE</span>
       </div>
       <div class="project project--personal" data-id="8" data-content="Contenu du projet personnel 3">
         <img src="./assets/images/folder.svg" alt="Projet personnel 3">
-        <span class="project__name">Projet personnel 3</span>
+        <span class="project__name">.EXE</span>
       </div>
     </div>
     
@@ -327,7 +331,7 @@
 
 
 
-  <div class="window window--me">
+  <div class="window window--me active">
     <div class="title-bar">
       <div class="title-bar__title">Welcome</div>
       <div class="title-bar__controls">
@@ -336,8 +340,9 @@
         <div class="title-bar__close">X</div>
       </div>
     </div>
-    <div class="content">Contenu de la fenêtre "Welcome"</div>
+    <div class="content">Welcome to my cutie portfolio, click on the X to close the tab and choose what you want to see !</div>
   </div>
+
 
 
 
@@ -360,7 +365,7 @@
     <div class="content">
       <div class="content content--paint">
         <canvas id="paintCanvas" width="480" height="300"></canvas>
-        <div class="window--paint_controls">
+        <div class="window--paint__controls">
           <button id="blackButton" class="color-button"></button>
           <button id="greyButton" class="color-button"></button>
           <button id="pinkButton" class="color-button"></button>
@@ -369,6 +374,7 @@
       </div>
     </div>
   </div>
+  
 
 
 
@@ -381,22 +387,57 @@
 
 
 
-
-
-
-  <div class="window window--music">
-    <div class="title-bar">
-      <div class="title-bar__title">Music</div>
+  <div class="window window--reglages">
+    <div class="title-bar title-bar--reglages">
+      <div class="title-bar__title">Réglages</div>
       <div class="title-bar__controls">
         <div class="title-bar__minimize">_</div>
         <div class="title-bar__maximize">[]</div>
         <div class="title-bar__close">X</div>
       </div>
     </div>
-    <div class="content">Contenu de la fenêtre "Music"</div>
+    <div class="content content--reglages">
+      <!-- Partie pour changer la langue du site 
+      <div class="reglages-section reglages-section--langue">
+        <h3 class="reglages-section__title">Langue</h3>
+        <select class="reglages-section__select">
+          <option value="fr" >Français</option>
+          <option value="en" selected>Anglais</option>
+        </select>
+      </div>
+    -->
+      
+      <!-- Partie pour régler le volume et la musique de fond 
+      <div class="reglages-section reglages-section--volume">
+        <h3 class="reglages-section__title">Volume et musique de fond</h3>
+   
+        <div class="audio-player">
+          <div class="audio-info">
+            <h3 class="audio-title">Titre de la musique</h3>
+            <img src="chemin/vers/image.jpg" alt="Image de la musique" class="audio-image">
+          </div>
+          <div class="audio-controls">
+            <audio id="audio-player" controls autoplay>
+              <source src="./assets/musiques/musique1.mp3" type="audio/mpeg">
+              Votre navigateur ne prend pas en charge l'élément audio.
+            </audio>
+            <div class="control-buttons">
+              <button id="prev-button">Précédent</button>
+              <button id="next-button">Suivant</button>
+              
+            </div>
+            <label class="reglages-section__label" for="volume-slider">Volume :</label>
+            <input class="reglages-section__slider" type="range" id="volume-slider" min="0" max="100" value="50">
+    
+          </div>
+        </div>
+        
+        -->
+        
+      </div>
+    </div>
   </div>
-
-
+  
 
 
 
@@ -405,9 +446,9 @@
 
   <footer class="footer">
     <div class="footer__content1">
-      <img src="./assets/images/github.svg" alt="Instagram" class="icon instagram-icon">
-      <img src="./assets/images/insta.svg" alt="Twitter" class="icon twitter-icon">
-      <img src="./assets/images/github.svg" alt="GitHub" class="icon github-icon">
+      <img src="./assets/images/github.svg" alt="Github" class="icon instagram-icon">
+      <img src="./assets/images/insta3.svg" alt="Instagram" class="icon twitter-icon">
+      <img src="./assets/images/mail.png" alt="Mail" class="icon github-icon">
     </div>
     <div class="footer__content2">
       <p class="footer__text">*•.¸♡ CUTE OS ♡¸.•*</p>

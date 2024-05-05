@@ -1,0 +1,85 @@
+/* Styles pour la fenêtre "Réglages" */
+.window--reglages {
+  /* Styles pour le contenu */
+  .content {
+    padding: 20px;
+
+    /* Styles pour les sections de réglages */
+    .reglages-section {
+      margin-bottom: 20px;
+
+      &--langue {
+        /* Styles pour la section de sélection de langue */
+        .reglages-section__select {
+          width: 100%;
+          padding: 5px;
+          font-size: 14px;
+        }
+      }
+
+      &--volume {
+        /* Styles pour la section de réglage du volume */
+        .reglages-section__label {
+          display: inline;
+          margin-bottom: 5px;
+          font-weight: bold;
+        }
+
+        .reglages-section__slider {
+          width: 100%;
+        }
+
+        .reglages-section__toggle {
+          margin-top: 10px;
+        }
+      }
+    }
+
+    /* Styles pour le lecteur audio */
+    .audio-player {
+      margin-top: 20px;
+      border-top: 1px solid #ccc;
+      padding-top: 20px;
+
+      .audio-info {
+        text-align: center;
+        margin-bottom: 20px;
+
+        .audio-title {
+          font-size: 18px;
+          font-weight: bold;
+        }
+
+        .audio-image {
+          max-width: 100%;
+          height: auto;
+          border-radius: 5px;
+        }
+      }
+
+      .audio-controls {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        audio {
+          width: 80%;
+          margin-right: 10px;
+        }
+
+        .control-buttons {
+          button {
+            background-color: #ddd;
+            border: none;
+            padding: 5px 10px;
+            transition: background-color 0.3s ease;
+
+            &:hover {
+              background-color: #ccc;
+            }
+          }
+        }
+      }
+    }
+  }
+}

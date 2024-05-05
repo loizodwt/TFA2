@@ -14,7 +14,7 @@
   &--projects,
   &--me,
   &--paint,
-  &--music {
+  &--reglages {
     width: 80px;
     height: 80px;
     margin: 10px;
@@ -59,7 +59,7 @@
   &--projects,
   &--me,
   &--paint,
-  &--music {
+  &--reglages {
     .title-bar {
       background-color: #F1DCEF;
       padding: 5px;
@@ -349,11 +349,13 @@
   .content {
     display: flex;
     justify-content: space-between; // Pour aligner les éléments à gauche et à droite
-    align-items: center; // Pour aligner les éléments verticalement au centre
+    align-items: center; // Pour aligner les éléments verticalement au centreµ
+    
 
     .window--paint_controls {
       display: flex;
       align-items: center;
+ 
 
       .color-button {
         margin-right: 5px; // Ajoutez une marge à droite entre les boutons de couleur
@@ -362,9 +364,16 @@
 
     #saveButton {
       margin-left: auto; // Pour pousser le bouton "Save" vers la droite
+      border: none;
+      background-color: #F1DCEF;
+      padding: 10px 20px;
+      border-radius: 5px;
     }
   }
 }
+
+
+
 
 
 
