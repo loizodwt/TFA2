@@ -24,7 +24,9 @@
 
     .content--me {
       &__paragraph {
-        padding: 10px;
+        margin: 0%;
+        padding-left: 10px;
+        padding-right: 10px;
         text-align: left;
         max-width: 900px;
       }

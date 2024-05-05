@@ -2,24 +2,32 @@
 
 
 .window--paint {
-  width: 500px;
+  width: 350px;
+
+
+
+
+
   .content {
     display: flex;
-    justify-content: center; // Pour aligner les éléments à gauche et à droite
-    align-items: center; // Pour aligner les éléments verticalement au centreµ
+    justify-content: start; // Pour aligner les éléments à gauche et à droite
+    align-items: center;
+    max-width: 300px; 
     
 
     .window--paint_controls {
       display: flex;
       align-items: center;
+   
  
 
       .color-button {
-        margin-right: 5px; // Ajoutez une marge à droite entre les boutons de couleur
+        margin-right: 5px; 
       }
     }
 
     #saveButton {
+      font-family: "lores-12", sans-serif;
       margin-left: auto; // Pour pousser le bouton "Save" vers la droite
       border: none;
       background-color: #F1DCEF;

@@ -271,17 +271,12 @@
 
 
 .lace-image-container {
-  width: 200%;
+
+  width: 300%;
   height: 50px;
 
 }
 
-.lace-image {
-  width: 100%;
-  bottom: 10;
-  left: 5;
-
-}
 }
 
 
@@ -296,6 +291,13 @@
 @media screen and (max-width: 500px) {
   .window {
     width: 340px; 
+
+    .lace-image-container {
+
+      width: 400%;
+      height: 50px;
+    
+    }
   }
 
   .about-section__image img {
@@ -309,10 +311,11 @@
 
      
   .about-section-column {
-    margin-right: 10px; /* Espace entre les colonnes */
-    max-width: 300px;
-
+    display: block;
   }
+
+  
+
 }
 
 
