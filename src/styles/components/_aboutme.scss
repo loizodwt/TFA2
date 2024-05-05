@@ -1,0 +1,74 @@
+
+
+.window--about {
+  height: auto;
+
+  .about-content {
+    .about-section {
+      .about-section__content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between; /* Pour séparer le texte et l'image */
+
+        .about-section__text {
+          flex: 1;
+          margin-right: 20px; /* Espace entre le texte et l'image */
+          max-width: 400px;
+        }
+
+        .about-section__image {
+          flex-shrink: 0;
+          margin-left: 10px;
+
+          img {
+            width: 150px;
+            height: 150px;
+          }
+        }
+      }
+
+      .about-section__columns {
+        display: flex;
+        justify-content: space-between; /* Pour créer deux colonnes */
+        
+        .about-column {
+          flex: 1; /* Pour que chaque colonne prenne la moitié de l'espace disponible */
+          margin-right: 100px; /* Espace entre les colonnes */
+          
+          .about-column__list {
+            list-style-type: none; /* Supprimer les puces */
+            padding: 0;
+            margin: 10px;
+
+            .about-column__item {
+              position: relative; /* Pour positionner l'icône SVG */
+              padding-left: 20px; /* Espace pour l'icône */
+
+              &:before {
+                content: url('../../assets/images/arrow2.png'); /* Remplacez le chemin de l'image par le vôtre */
+                position: absolute;
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%);
+              }
+            }
+          }
+        }
+
+        .about-column:last-child {
+          margin-right: 0; /* Aucun espace à droite pour la dernière colonne */
+        }
+      }
+    }
+  }
+}
+
+.about-column__title {
+  margin-top: 10px; 
+}
+
+
+
+
+
+

@@ -7,9 +7,9 @@ $padding: 10px;
   background-color: $footer-color;
   color: $footer-text-color;
   padding: $padding;
-  border-radius: 10px;
   display: flex;
   justify-content: space-between;
+  z-index: -10;
 
   &__content1 {
     margin-left: 20px;
@@ -26,7 +26,7 @@ $padding: 10px;
 
   &__time {
     margin-right: 10px;
-    margin-left: 40px;
+    margin-left: 4vw;
     font-size: 20px;
   }
 
