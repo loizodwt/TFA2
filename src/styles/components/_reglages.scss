@@ -59,6 +59,7 @@
 
       .audio-controls {
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
 
@@ -68,7 +69,13 @@
         }
 
         .control-buttons {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          margin-bottom: 10px;
+
           button {
+            margin: 0 5px;
             background-color: #ddd;
             border: none;
             padding: 5px 10px;
@@ -79,6 +86,72 @@
             }
           }
         }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+.reglages-section--volume {
+  /* Styles pour la section de réglage du volume */
+  .reglages-section__title {
+    margin-bottom: 10px;
+  }
+
+  .audio-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .reglages-section__label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    .reglages-section__slider {
+      width: 80%;
+      margin: 0 auto;
+      -webkit-appearance: none;
+      appearance: none;
+      height: 5px;
+      border-radius: 5px;
+      background: #ccc;
+      outline: none;
+      &::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background: #4caf50;
+        cursor: pointer;
+      }
+      &::-moz-range-thumb {
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background: #4caf50;
+        cursor: pointer;
+      }
+    }
+
+    .audio-progress {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 80%;
+      margin-top: 10px;
+
+      .audio-time {
+        font-size: 14px;
+        color: #555;
       }
     }
   }

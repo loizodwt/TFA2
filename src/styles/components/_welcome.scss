@@ -29,6 +29,15 @@
         padding-right: 10px;
         text-align: left;
         max-width: 900px;
+
+
+        &--large {
+          font-size: 30px;
+          padding: 10px;
+          text-align: left;
+          max-width: 900px;
+        }
+
       }
 
       &__image {
