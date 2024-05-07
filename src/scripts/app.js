@@ -266,104 +266,83 @@ function showProjects(projects) {
 
 
 
-
-
-// MUSIQUEEEEEEEEEE
-
-const audioPlayer = document.getElementById('audio-player');
-const audioTitle = document.querySelector('.audio-title');
-const audioImage = document.querySelector('.audio-image');
-const prevButton = document.getElementById('prev-button');
-const nextButton = document.getElementById('next-button');
-const audioElements = document.querySelectorAll('audio');
-const volumeSlider = document.getElementById('volume-slider');
-const progressBar = document.getElementById('progress-bar');
-const toggleButtons = document.querySelectorAll('.toggle-button');
-
-
-
-function adjustVolume() {
-  const volumeValue = volumeSlider.value / 100; // Conversion de la valeur du slider en décimale
-  audioElements.forEach(audio => {
-      audio.volume = volumeValue; // Ajustement du volume pour chaque élément audio
+  const audioPlayer = document.querySelector('.audio-player audio');
+  const audioTitle = document.querySelector('.audio-title');
+  const audioImage = document.querySelector('.audio-image');
+  const prevButton = document.querySelector('.audio-controls__prev-button');
+  const nextButton = document.querySelector('.audio-controls__next-button');
+  const audioElements = document.querySelectorAll('.audio-player audio');
+  const volumeSlider = document.querySelector('.reglages-section__slider');
+  const progressBar = document.querySelector('.audio-controls__progress-bar');
+  const toggleButtons = document.querySelectorAll('.audio-controls__toggle-button');
+  
+  function adjustVolume() {
+    const volumeValue = volumeSlider.value / 100;
+    audioElements.forEach(audio => {
+      audio.volume = volumeValue;
+    });
+  }
+  
+  volumeSlider.addEventListener('input', adjustVolume);
+  adjustVolume();
+  
+  const musiques = [
+    { title: 'Musique 1', source: './assets/musiques/musique1.mp3', image: 'chemin/vers/image1.jpg' },
+    { title: 'Musique 2', source: './assets/musiques/musique2.mp3', image: 'chemin/vers/image2.jpg' },
+    { title: 'Musique 3', source: './assets/musiques/musique3.mp3', image: 'chemin/vers/image3.jpg' }
+  ];
+  
+  let currentMusicIndex = 0;
+  
+  function loadMusic(index) {
+    const music = musiques[index];
+    audioPlayer.src = music.source;
+    audioTitle.textContent = music.title;
+    audioImage.src = music.image;
+  }
+  
+  window.addEventListener('load', () => {
+    loadMusic(currentMusicIndex);
   });
-}
-
-volumeSlider.addEventListener('input', adjustVolume);
-
-adjustVolume();
-// Liste des musiques
-const musiques = [
-  { title: 'Musique 1', source: './assets/musiques/musique1.mp3', image: 'chemin/vers/image1.jpg' },
-  { title: 'Musique 2', source: './assets/musiques/musique2.mp3', image: 'chemin/vers/image2.jpg' },
-  { title: 'Musique 3', source: './assets/musiques/musique3.mp3', image: 'chemin/vers/image3.jpg' }
-];
-
-// Index de la musique actuellement jouée
-let currentMusicIndex = 0;
-
-// Fonction pour charger une musique
-function loadMusic(index) {
-  const music = musiques[index];
-  audioPlayer.src = music.source;
-  audioTitle.textContent = music.title;
-  audioImage.src = music.image;
-}
-
-// Charger la première musique au chargement de la page
-window.addEventListener('load', () => {
-  loadMusic(currentMusicIndex);
-});
-
-// Événement pour passer à la piste précédente
-prevButton.addEventListener('click', () => {
-  currentMusicIndex = (currentMusicIndex - 1 + musiques.length) % musiques.length;
-  loadMusic(currentMusicIndex);
-});
-
-// Événement pour passer à la piste suivante
-nextButton.addEventListener('click', () => {
-  currentMusicIndex = (currentMusicIndex + 1) % musiques.length;
-  loadMusic(currentMusicIndex);
-});
-
-
-audioPlayer.addEventListener('timeupdate', () => {
-  const duration = audioPlayer.duration;
-  const currentTime = audioPlayer.currentTime;
-  progressBar.value = (currentTime / duration) * 100;
-});
-
-// Fonction pour mettre à jour la position de lecture de la piste audio en cliquant sur la barre de progression
-progressBar.addEventListener('click', (event) => {
-  const progressBarWidth = progressBar.clientWidth;
-  const clickX = event.clientX - progressBar.getBoundingClientRect().left;
-  const duration = audioPlayer.duration;
-  const newPosition = (clickX / progressBarWidth) * duration;
-  audioPlayer.currentTime = newPosition;
-});
-
-
-
-
-
-// Gérer la lecture/pause de la piste audio
-toggleButtons.forEach(button => {
-  button.addEventListener('click', () => {
+  
+  prevButton.addEventListener('click', () => {
+    currentMusicIndex = (currentMusicIndex - 1 + musiques.length) % musiques.length;
+    loadMusic(currentMusicIndex);
+  });
+  
+  nextButton.addEventListener('click', () => {
+    currentMusicIndex = (currentMusicIndex + 1) % musiques.length;
+    loadMusic(currentMusicIndex);
+  });
+  
+  audioPlayer.addEventListener('timeupdate', () => {
+    const duration = audioPlayer.duration;
+    const currentTime = audioPlayer.currentTime;
+    progressBar.value = (currentTime / duration) * 100;
+  });
+  
+  progressBar.addEventListener('click', (event) => {
+    const progressBarWidth = progressBar.clientWidth;
+    const clickX = event.clientX - progressBar.getBoundingClientRect().left;
+    const duration = audioPlayer.duration;
+    const newPosition = (clickX / progressBarWidth) * duration;
+    audioPlayer.currentTime = newPosition;
+  });
+  
+  toggleButtons.forEach(button => {
+    button.addEventListener('click', () => {
       if (audioPlayer.paused) {
-          audioPlayer.play();
-          button.textContent = 'Pause';
-          // Changer l'icône du bouton (s'il y a lieu)
-          button.classList.add('playing');
+        audioPlayer.play();
+        button.textContent = 'Pause';
+        button.classList.add('playing');
       } else {
-          audioPlayer.pause();
-          button.textContent = 'Play';
-          // Changer l'icône du bouton (s'il y a lieu)
-          button.classList.remove('playing');
+        audioPlayer.pause();
+        button.textContent = 'Play';
+        button.classList.remove('playing');
       }
+    });
   });
-});
-
+  
 
 
 // Sélectionnez le fichier audio
