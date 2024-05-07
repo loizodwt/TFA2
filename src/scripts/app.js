@@ -263,7 +263,7 @@ function bringToFront(window) {
   const prevButton = document.querySelector('.audio-controls__prev-button img');
   const nextButton = document.querySelector('.audio-controls__next-button img');  
   const audioElements = document.querySelectorAll('.audio-player audio');
-  const volumeSlider = document.querySelector('.reglages-section__slider');
+  const volumeSlider = document.querySelector('.music-section__slider');
   const progressBar = document.querySelector('.audio-controls__progress-bar');
   
   function adjustVolume() {
@@ -304,7 +304,7 @@ function bringToFront(window) {
     currentMusicIndex = (currentMusicIndex + 1) % musiques.length;
     loadMusic(currentMusicIndex);
   });
-  
+
   audioPlayer.addEventListener('timeupdate', () => {
     const duration = audioPlayer.duration;
     const currentTime = audioPlayer.currentTime;
@@ -483,7 +483,7 @@ updateClock();
 
 /*
 // Sélectionner le sélecteur de langue
-var langueSelect = document.querySelector('.reglages-section__select');
+var langueSelect = document.querySelector('.music-section__select');
 
 // Écouter les changements de sélection de langue
 langueSelect.addEventListener('change', function() {

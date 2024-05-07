@@ -15,7 +15,7 @@
   &--me,
   &--paint,
   &--credits,
-  &--reglages {
+  &--music {
     width: 80px;
     height: 80px;
     margin: 10px;
@@ -61,7 +61,7 @@
   &--projects,
   &--paint,
   &--credits,
-  &--reglages {
+  &--music {
     .title-bar {
       background-color: #F1DCEF;
       padding: 5px;
@@ -91,44 +91,26 @@
 
     .content {
       padding: 10px;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: flex-start;
-
-      
 
 
-    .project-list {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: flex-start; // Pour aligner les icônes à gauche
-   
-     
-    }
-    .project {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      width: 100px;
-      cursor: pointer;
-
-    }
-
- 
-    img {
-      width: 60px;
-      height: 60px;
-      margin-bottom: 5px;
-    }
-
-    span {
-      font-size: 12px;
-    }
     }
   }
     
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

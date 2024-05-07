@@ -54,13 +54,13 @@
       <span class="icon__text">Paint</span>
     </div>
 
-    <div class="icon icon--reglages" data-target="reglages">
-      <img src="./assets/images/folder.svg" alt="reglages" class="icon__image">
-      <span class="icon__text">reglages</span>
+    <div class="icon icon--music" data-target="music">
+      <img src="./assets/images/folder.svg" alt="music" class="icon__image">
+      <span class="icon__text">Music</span>
     </div>
 
     <div class="icon icon--credits" data-target="credits">
-      <img src="./assets/images/txt.png" alt="reglages" class="icon__image">
+      <img src="./assets/images/txt.png" alt="credits" class="icon__image">
       <span class="icon__credits">Credits.txt</span>
     </div>
 
@@ -77,7 +77,7 @@
 
   <div class="window window--me active">
     <div class="title-bar">
-      <div class="title-bar__title">Welcome</div>
+      <div class="title-bar__title">𐙚 ‧₊˚⋅ Welcome</div>
       <div class="title-bar__controls">
         <div class="title-bar__close">X</div>
       </div>
@@ -101,7 +101,7 @@
 
   <div class="window window--credits">
     <div class="title-bar">
-      <div class="title-bar__title">Credits</div>
+      <div class="title-bar__title">𐙚 ‧₊˚⋅ Credits</div>
       <div class="title-bar__controls">
         <div class="title-bar__close">X</div>
       </div>
@@ -137,7 +137,7 @@
 
   <div class="window window--about">
     <div class="title-bar">
-      <div class="title-bar__title">About me</div>
+      <div class="title-bar__title">𐙚 ‧₊˚⋅ About me</div>
       <div class="title-bar__controls">
         <div class="title-bar__close">X</div>
       </div>
@@ -405,7 +405,7 @@
 
   <div class="window window--paint">
     <div class="title-bar">
-      <div class="title-bar__title">Paint</div>
+      <div class="title-bar__title">𐙚 ‧₊˚⋅ Paint</div>
       <div class="title-bar__controls">
         <div class="title-bar__close">X</div>
       </div>
@@ -432,21 +432,32 @@
 
 
 
-
-  <div class="window window--reglages">
-    <div class="title-bar title-bar--reglages">
-      <div class="title-bar__title">Réglages</div>
+  <div class="window window--music">
+    <div class="title-bar title-bar--music">
+      <div class="title-bar__title">𐙚 ‧₊˚⋅ Music</div>
       <div class="title-bar__controls">
         <div class="title-bar__close">X</div>
       </div>
     </div>
-    <div class="content content--reglages">
-      <div class="reglages-section reglages-section--volume">
-        <h3 class="reglages-section__title">Volume et musique de fond</h3>
+    <div class="lace-image-container">
+      <img src="./assets/images/dentelle2.png" alt="Dentelle" class="lace-image">
+    </div>
+  
+    <div class="content content--music">
+      <div class="music-section music-section--volume">
         <div class="audio-player">
           <div class="audio-info">
+
+
+            <div class="music-section__volume-control">
+              <input class="music-section__slider" type="range" min="0" max="100" value="50">
+            </div>
+
+
             <h3 class="audio-title">Titre de la musique</h3>
+            
             <img src="chemin/vers/image.jpg" alt="Image de la musique" class="audio-image">
+         
           </div>
           <div class="audio-controls">
             <audio autoplay>
@@ -454,21 +465,23 @@
               Votre navigateur ne prend pas en charge l'élément audio.
             </audio>
             <progress class="audio-controls__progress-bar" value="0" max="100"></progress>
-            <div class="audio-controls__toggle">
-              <img class="audio-controls__play-icon" src="chemin/vers/image_play.png" alt="Play">
-              <img class="audio-controls__pause-icon" src="chemin/vers/image_pause.png" alt="Pause">
-            </div>
+  
+         
+  
             <div class="audio-controls__control-buttons">
               <button class="audio-controls__prev-button">
                 <img src="chemin/vers/image_prev.png" alt="Précédent">
               </button>
+              
+              <div class="audio-controls__toggle">
+                <img class="audio-controls__play-icon" src="./assets/images/play.svg" alt="Play">
+                <img class="audio-controls__pause-icon" src="./assets/images/pause.svg" alt="Pause">
+              </div>
+              
               <button class="audio-controls__next-button">
-                <img src="chemin/vers/image_next.png" alt="Suivant">
+                <img src="./assets/images/next.svg" alt="Suivant">
               </button>
             </div>
-            
-            <label class="reglages-section__label" for="volume-slider">Volume :</label>
-            <input class="reglages-section__slider" type="range" min="0" max="100" value="50">
           </div>
         </div>
       </div>
