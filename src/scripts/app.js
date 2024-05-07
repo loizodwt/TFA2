@@ -325,17 +325,19 @@ nextButton.addEventListener('click', () => {
 });
 
 
-///clic
-const clicSounds = document.querySelectorAll('.clic-audio');
-
-clicSounds.forEach(function(sound) {
-  sound.addEventListener('click', function() {
-    sound.play();
-  });
-});
 
 
 
+// Sélectionnez le fichier audio
+const clicSound = new Audio('./assets/musiques/clic2.wav');
+
+// Fonction pour jouer le son à chaque clic
+function playClicSound() {
+  clicSound.play();
+}
+
+// Écoutez chaque clic sur la page
+document.body.addEventListener('click', playClicSound);
 
 
 

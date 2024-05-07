@@ -29,6 +29,7 @@
     "sass-loader": "^12.4.0"
   },
   "dependencies": {
+    "cors": "^2.8.5",
     "gsap": "^3.12.5"
   }
 }
