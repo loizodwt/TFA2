@@ -156,3 +156,16 @@
     }
   }
 }
+
+
+
+.toggle-button {
+  width: 50px; /* Largeur de l'image */
+  height: 50px; /* Hauteur de l'image */
+  background-image: url('chemin/vers/icone-play.png'); /* Image de lecture par défaut */
+  background-size: cover; /* Redimensionner l'image pour couvrir le bouton */
+}
+
+.toggle-button.pause {
+  background-image: url('chemin/vers/icone-pause.png'); /* Image de pause lorsque la piste est en cours de lecture */
+}

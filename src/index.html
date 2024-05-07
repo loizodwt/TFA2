@@ -449,11 +449,15 @@
             <img src="chemin/vers/image.jpg" alt="Image de la musique" class="audio-image">
           </div>
           <div class="audio-controls">
-            <audio id="audio-player" controls autoplay>
+            
+            <button class="toggle-button">Play</button>
+
+          <audio id="audio-player" autoplay>
               <source src="./assets/musiques/musique1.mp3" type="audio/mpeg">
               Votre navigateur ne prend pas en charge l'élément audio.
-            </audio>
-            
+          </audio>
+          <progress id="progress-bar" class="reglages-section__progress" value="0" max="100"></progress>
+          
             <div class="control-buttons">
               <button id="prev-button">Précédent</button>
               <button id="next-button">Suivant</button>

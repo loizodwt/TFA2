@@ -277,6 +277,9 @@ const prevButton = document.getElementById('prev-button');
 const nextButton = document.getElementById('next-button');
 const audioElements = document.querySelectorAll('audio');
 const volumeSlider = document.getElementById('volume-slider');
+const progressBar = document.getElementById('progress-bar');
+const toggleButtons = document.querySelectorAll('.toggle-button');
+
 
 
 function adjustVolume() {
@@ -325,11 +328,46 @@ nextButton.addEventListener('click', () => {
 });
 
 
+audioPlayer.addEventListener('timeupdate', () => {
+  const duration = audioPlayer.duration;
+  const currentTime = audioPlayer.currentTime;
+  progressBar.value = (currentTime / duration) * 100;
+});
+
+// Fonction pour mettre à jour la position de lecture de la piste audio en cliquant sur la barre de progression
+progressBar.addEventListener('click', (event) => {
+  const progressBarWidth = progressBar.clientWidth;
+  const clickX = event.clientX - progressBar.getBoundingClientRect().left;
+  const duration = audioPlayer.duration;
+  const newPosition = (clickX / progressBarWidth) * duration;
+  audioPlayer.currentTime = newPosition;
+});
+
+
+
+
+
+// Gérer la lecture/pause de la piste audio
+toggleButtons.forEach(button => {
+  button.addEventListener('click', () => {
+      if (audioPlayer.paused) {
+          audioPlayer.play();
+          button.textContent = 'Pause';
+          // Changer l'icône du bouton (s'il y a lieu)
+          button.classList.add('playing');
+      } else {
+          audioPlayer.pause();
+          button.textContent = 'Play';
+          // Changer l'icône du bouton (s'il y a lieu)
+          button.classList.remove('playing');
+      }
+  });
+});
 
 
 
 // Sélectionnez le fichier audio
-const clicSound = new Audio('./assets/musiques/clic2.wav');
+//const clicSound = new Audio('./assets/musiques/clic2.wav');
 
 // Fonction pour jouer le son à chaque clic
 function playClicSound() {
