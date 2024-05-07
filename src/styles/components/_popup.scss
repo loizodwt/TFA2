@@ -64,7 +64,6 @@
   &--reglages {
     .title-bar {
       background-color: #F1DCEF;
-      border-top: 1px solid #F1DCEF;
       padding: 5px;
       display: flex;
       justify-content: space-between;
@@ -279,15 +278,6 @@
 
 
 
-.window {
-  &--projects {
-    .title-bar {
-     border: none;
-    }
-
-  }
-
-  
 
 
 .lace-image-container {
@@ -297,7 +287,6 @@
 
 }
 
-}
 
 
 
@@ -338,13 +327,3 @@
 
 }
 
-
-
-.window {
-  &--projects {
-    .title-bar {
-     border: none;
-    }
-
-  }
-}
