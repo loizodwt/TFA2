@@ -4,6 +4,7 @@
   height: auto;
 
   .about-content {
+    padding: 10px;
     .about-section {
       .about-section__content {
         display: flex;
@@ -36,7 +37,7 @@
 
       .about-section__columns {
         display: flex;
-        justify-content: space-between; /* Pour créer deux colonnes */
+        justify-content: space-around; /* Pour créer deux colonnes */
         
         .about-column {
           flex: 1; /* Pour que chaque colonne prenne la moitié de l'espace disponible */

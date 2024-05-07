@@ -3,6 +3,12 @@
   /* Styles pour le contenu */
   .content {
     padding: 20px;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+
+    
 
     /* Styles pour les sections de réglages */
     .reglages-section {

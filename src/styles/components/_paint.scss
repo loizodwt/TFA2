@@ -9,14 +9,18 @@
 
 
   .content {
-    display: flex;
-    justify-content: start; // Pour aligner les éléments à gauche et à droite
-    align-items: center;
+
     max-width: 300px; 
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+
     
 
     .window--paint_controls {
       display: flex;
+      justify-content: space-between;
       align-items: center;
    
  
