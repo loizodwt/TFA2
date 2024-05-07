@@ -260,12 +260,11 @@ function bringToFront(window) {
   const audioPlayer = document.querySelector('.audio-player audio');
   const audioTitle = document.querySelector('.audio-title');
   const audioImage = document.querySelector('.audio-image');
-  const prevButton = document.querySelector('.audio-controls__prev-button');
-  const nextButton = document.querySelector('.audio-controls__next-button');
+  const prevButton = document.querySelector('.audio-controls__prev-button img');
+  const nextButton = document.querySelector('.audio-controls__next-button img');  
   const audioElements = document.querySelectorAll('.audio-player audio');
   const volumeSlider = document.querySelector('.reglages-section__slider');
   const progressBar = document.querySelector('.audio-controls__progress-bar');
-  const toggleButtons = document.querySelectorAll('.audio-controls__toggle-button');
   
   function adjustVolume() {
     const volumeValue = volumeSlider.value / 100;
@@ -320,18 +319,25 @@ function bringToFront(window) {
     audioPlayer.currentTime = newPosition;
   });
   
-  toggleButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      if (audioPlayer.paused) {
-        audioPlayer.play();
-        button.textContent = 'Pause';
-        button.classList.add('playing');
-      } else {
-        audioPlayer.pause();
-        button.textContent = 'Play';
-        button.classList.remove('playing');
-      }
-    });
+  const playIcon = document.querySelector('.audio-controls__play-icon');
+  const pauseIcon = document.querySelector('.audio-controls__pause-icon');
+  
+  audioPlayer.addEventListener('play', () => {
+    playIcon.style.display = 'none';
+    pauseIcon.style.display = 'block';
+  });
+  
+  audioPlayer.addEventListener('pause', () => {
+    playIcon.style.display = 'block';
+    pauseIcon.style.display = 'none';
+  });
+  
+  document.querySelector('.audio-controls__toggle').addEventListener('click', () => {
+    if (audioPlayer.paused) {
+      audioPlayer.play();
+    } else {
+      audioPlayer.pause();
+    }
   });
   
 
