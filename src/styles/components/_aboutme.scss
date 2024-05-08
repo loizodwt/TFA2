@@ -17,13 +17,33 @@
       .about-section__content {
         display: flex;
         align-items: center;
-        justify-content: space-between; /* Pour séparer le texte et l'image */
+        justify-content: space-between; 
 
         .about-section__text {
           flex: 1;
-          margin-right: 20px; /* Espace entre le texte et l'image */
+          margin-right: 20px;
           max-width: 400px;
         
+
+          &--vague {
+           margin: 0%;
+          
+  
+          }
+          &--abtme1 {
+            margin: 0%;
+            margin-top: 32px;
+           
+   
+           }
+           &--abtme2 {
+            margin: 0%;
+            margin-top: 8px;
+            margin-bottom: 32px;
+           
+   
+           }
+ 
         }
         
      
