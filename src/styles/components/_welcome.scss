@@ -1,5 +1,6 @@
 .window {
   &--me {
+
     z-index: 1;
     .title-bar {
       background-color: #F1DCEF;
@@ -31,6 +32,7 @@
     .content--me {
       padding: 10px;
       padding-top: 0;
+      padding-bottom: 20px;
    
 
       &__paragraph {
@@ -57,6 +59,7 @@
        margin: 0 auto;
        display: flex;
        margin-top: 100px;
+       margin-bottom: 20px;
        
         img {
           max-width: 50%;
