@@ -110,7 +110,7 @@ windows.forEach(window => {
   // Définir les propriétés de départ pour chaque fenêtre
   gsap.set(window, {
     opacity: 0,
-    y: '-100px' // Déplacer chaque fenêtre vers le bas de 50px
+    y: '-100px' // Déplacer chaque fenêtre vers le bas de 100px
   });
 
   // Utiliser GSAP pour animer l'ouverture de chaque fenêtre
@@ -130,19 +130,19 @@ icons.forEach(icon => {
 
     gsap.set(window, {
       opacity: 0,
-      y: '-100px' // Déplacer chaque fenêtre vers le bas de 50px
+      yPercent: -50, // Centrer verticalement
+      y: '-100px' // Déplacer chaque fenêtre vers le bas de 100px
     });
   
     // Utiliser GSAP pour animer l'ouverture de chaque fenêtre
     gsap.to(window, {
       opacity: 1,
-      y: 0, // Position finale (pas de déplacement vertical)
+      y: '0%', // Position finale (centrée verticalement)
       duration: 0.5, // Durée de l'animation
       ease: 'power2.out' // Courbe d'accélération
     });
   });
 });
-
 
 ////gsap windows
 
