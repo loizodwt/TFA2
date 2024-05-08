@@ -128,21 +128,18 @@ icons.forEach(icon => {
     const target = icon.getAttribute('data-target');
     const window = document.querySelector(`.window--${target}`);
 
-    if (window) {
-      // Définir les propriétés de départ pour la fenêtre
-      gsap.set(window, {
-        opacity: 0,
-        y: '-50px' // Déplacer la fenêtre vers le bas de 50px
-      });
-
-      // Utiliser GSAP pour animer l'apparition de la fenêtre
-      gsap.to(window, {
-        opacity: 1,
-        y: 0, // Position finale (pas de déplacement vertical)
-        duration: 0.5, // Durée de l'animation
-        ease: 'power2.out' // Courbe d'accélération
-      });
-    }
+    gsap.set(window, {
+      opacity: 0,
+      y: '-100px' // Déplacer chaque fenêtre vers le bas de 50px
+    });
+  
+    // Utiliser GSAP pour animer l'ouverture de chaque fenêtre
+    gsap.to(window, {
+      opacity: 1,
+      y: 0, // Position finale (pas de déplacement vertical)
+      duration: 0.5, // Durée de l'animation
+      ease: 'power2.out' // Courbe d'accélération
+    });
   });
 });
 
