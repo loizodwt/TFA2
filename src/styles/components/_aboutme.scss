@@ -51,6 +51,7 @@
           flex-shrink: 0;
           margin-left: 10px;
 
+
           img {
             width: 150px;
             height: 150px;
@@ -60,14 +61,14 @@
 
       .about-section__columns {
         display: flex;
-        justify-content: space-around; /* Pour créer deux colonnes */
+        justify-content: space-around; 
         
         .about-column {
-          flex: 1; /* Pour que chaque colonne prenne la moitié de l'espace disponible */
-          margin-right: 100px; /* Espace entre les colonnes */
+          flex: 1; 
+          margin-right: 100px;
           
           .about-column__list {
-            list-style-type: none; /* Supprimer les puces */
+            list-style-type: none;
             padding: 0;
             margin: 10px;
 
