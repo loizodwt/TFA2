@@ -442,6 +442,19 @@ if (paintWindow) {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 // l'heure :3
 const footerTime = document.querySelector('.footer__time');
 

@@ -15,6 +15,7 @@
       }
 
       .audio-controls {
+        
         .audio-controls__control-buttons {
           margin: 10px;
           padding: 10px;
@@ -22,11 +23,18 @@
           background-color: #F5F5F5;
           display: flex;
           justify-content: space-between;
+          align-items: center;
 
           button {
             border: none;
-            background-color: none;
+           
           }
+        }
+
+        .audio-controls__pause-icon {
+          display: none;
+        
+          
         }
       }
     }
