@@ -1,38 +1,26 @@
-
-
-
 .window--paint {
   width: 350px;
 
-
-
-
-
   .content {
-
-    max-width: 300px; 
+    max-width: 300px;
     padding: 10px;
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
 
-    
-
     .window--paint_controls {
       display: flex;
       justify-content: space-between;
       align-items: center;
-   
- 
 
       .color-button {
-        margin-right: 5px; 
+        margin-right: 5px;
       }
     }
 
-    #saveButton {
+    .save-button {
       font-family: "lores-12", sans-serif;
-      margin-left: auto; // Pour pousser le bouton "Save" vers la droite
+      margin-left: auto; /* Pour pousser le bouton "Save" vers la droite */
       border: none;
       background-color: #F1DCEF;
       padding: 10px 20px;
@@ -42,11 +30,6 @@
   }
 }
 
-
-
-
-
-
 .color-button {
   width: 30px;
   height: 30px;
@@ -54,21 +37,14 @@
   margin: 0px;
 }
 
-#blackButton {
+.blackButton {
   background-color: #000000;
 }
 
-#greyButton {
+.greyButton {
   background-color: #808080;
 }
 
-#pinkButton {
-  background-color:  #F1DCEF;
+.pinkButton {
+  background-color: #F1DCEF;
 }
-
-
-
-
-
-
-

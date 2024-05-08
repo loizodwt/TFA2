@@ -383,15 +383,14 @@ document.body.addEventListener('click', playClicSound);
 
 // PAINTTTTT
 
-
 const paintWindow = document.querySelector('.window--paint');
 if (paintWindow) {
   const canvas = paintWindow.querySelector('.content canvas');
   const context = canvas.getContext('2d');
-  const saveButton = paintWindow.querySelector('.content #saveButton');
-  const blackButton = paintWindow.querySelector('.content #blackButton');
-  const greyButton = paintWindow.querySelector('.content #greyButton');
-  const pinkButton = paintWindow.querySelector('.content #pinkButton');
+  const saveButton = paintWindow.querySelector('.content .save-button');
+  const blackButton = paintWindow.querySelector('.content .blackButton');
+  const greyButton = paintWindow.querySelector('.content .greyButton');
+  const pinkButton = paintWindow.querySelector('.content .pinkButton');
 
   let isPainting = false;
   let lastX = 0;
@@ -428,15 +427,15 @@ if (paintWindow) {
   });
 
   blackButton.addEventListener('click', () => {
-    currentColor = '#000000'; // Set color to black
+    currentColor = '#000000'; 
   });
 
   greyButton.addEventListener('click', () => {
-    currentColor = '#808080'; // Set color to grey
+    currentColor = '#808080'; 
   });
 
   pinkButton.addEventListener('click', () => {
-    currentColor = '#FFC0CB'; // Set color to pink
+    currentColor = '#F1DCEF';
   });
 }
 
