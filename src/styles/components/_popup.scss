@@ -81,9 +81,14 @@
  
   
         div {
-          padding-left: 5px;
-          padding-right: 5px;
+          padding: 2px;
           cursor: pointer;
+        }
+        img {
+         width: 25px;
+         height: 25px;
+         display: flex;
+         align-items: center;
         }
       }
     }

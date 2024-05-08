@@ -12,18 +12,24 @@
         background-color: #F5F5F5;
         padding: 5px;
         border-radius: 5px;
-
+ 
+  
         div {
-          padding-left: 5px;
-          padding-right: 5px;
+          padding: 2px;
           cursor: pointer;
         }
-      }
+        img {
+         width: 25px;
+         height: 25px;
+         display: flex;
+         align-items: center;
+        }
     }
-
+  }
     .content--me {
       padding: 10px;
-      
+      padding-top: 0;
+
       &__paragraph {
         margin: 0%;
         padding-left: 10px;

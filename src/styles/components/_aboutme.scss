@@ -15,10 +15,11 @@
           flex: 1;
           margin-right: 20px; /* Espace entre le texte et l'image */
           max-width: 400px;
+        
         }
         
         .about-section__title {
-           font-size: 30px;
+           font-size: 32px;
            margin: 0%;
            padding: 0%;
         }
@@ -72,7 +73,9 @@
 }
 
 .about-column__title {
-  margin-top: 10px; 
+  margin: 0px; 
+  margin-bottom: 10px;
+  font-size: 23px;
 }
 
 
