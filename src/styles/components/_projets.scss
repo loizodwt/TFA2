@@ -173,20 +173,70 @@
 
 
 
+.window--project-details{
 
+  
+  .content {
+    flex: 1;
+    display: block;
+    flex-direction: column;
+    padding: 20px;
 
+    .project-details-content__header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      
+      .project-details-content__title {
+        font-size: 24px;
+        font-weight: bold;
+        margin-right: 20px;
+      }
+    }
+    
+    .project-details-content__image {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+    .project-details-content__button {
+      display: block;
+      margin: 0 auto;
+      padding: 15px 20px;
+      background-color: #F1DCEF;
+      border: none;
+      border-radius: 15px;
+      border: 1px solid #8A4484;
+  
+    }
+    .project-details-content__features {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+   
+      
+      .project-details-content__feature-column {
+        flex: 1;
+        
+        .project-details-content__feature-list {
+          list-style: none;
+          padding: 0;
+          
+          .project-details-content__feature-item {
 
-
-
-
-
-.project-details-content {
-  display: none;
+            margin-bottom: 10px;
+         
+          
+          }
+        }
+      }
+    }
+  }
 }
 
-.window--project-details.active .project-details-content {
-  display: flex;
-}
+
 
 
 

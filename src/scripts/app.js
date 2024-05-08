@@ -1,92 +1,82 @@
-
 "use strict";
 
 document.addEventListener('DOMContentLoaded', () => {
   
-/////filtre perso scolaire et icon trigger
+  // Filtre perso scolaire et icône déclencheur
+  const personalButton = document.querySelector('.filter-button--personal');
+  const schoolButton = document.querySelector('.filter-button--school');
+  const personalProjects = document.querySelectorAll('.project--personal');
+  const schoolProjects = document.querySelectorAll('.project--school');
 
-const personalButton = document.querySelector('.filter-button--personal');
-const schoolButton = document.querySelector('.filter-button--school');
-const personalProjects = document.querySelectorAll('.project--personal');
-const schoolProjects = document.querySelectorAll('.project--school');
-
-// Cacher les projets personnels au chargement de la page
-hideProjects(personalProjects);
-
-personalButton.addEventListener('click', () => {
-  hideProjects(schoolProjects);
-  showProjects(personalProjects);
-});
-
-schoolButton.addEventListener('click', () => {
+  // Cacher les projets personnels au chargement de la page
   hideProjects(personalProjects);
-  showProjects(schoolProjects);
-});
 
-const icons = document.querySelectorAll('.icon');
-icons.forEach(icon => {
-  icon.addEventListener('click', () => {
-    const target = icon.getAttribute('data-target');
-    const window = document.querySelector(`.window--${target}`);
-    if (window) {
-      window.classList.add('active');
-      bringToFront(window);
-    }
-  });
-});
-
-function hideProjects(projects) {
-  projects.forEach(project => {
-    project.style.display = 'none';
-  });
-}
-
-function showProjects(projects) {
-  projects.forEach(project => {
-    project.style.display = 'flex';
-  });
-}
-////perso sco
-
-
-
-
-
-
-
-
-
-
-///ZINDEXXXXXXXXXXX
-
-
-function bringToFront(window) {
-  const windows = document.querySelectorAll('.window');
-  let maxZIndex = 0;
-
-  // Trouver le niveau de z-index maximum parmi toutes les fenêtres
-  windows.forEach(win => {
-    const zIndex = parseInt(win.style.zIndex);
-    if (!isNaN(zIndex) && zIndex > maxZIndex) {
-      maxZIndex = zIndex;
-    }
+  personalButton.addEventListener('click', () => {
+    hideProjects(schoolProjects);
+    showProjects(personalProjects);
   });
 
-  // Mettre la fenêtre spécifique au premier plan
-  window.style.zIndex = maxZIndex + 1;
+  schoolButton.addEventListener('click', () => {
+    hideProjects(personalProjects);
+    showProjects(schoolProjects);
+  });
 
-  // Gestionnaires d'événements pour les événements tactiles
-  window.addEventListener('touchstart', onTouchStart, { passive: false });
-
-  function onTouchStart() {
-    windows.forEach(win => {
-      win.style.zIndex = parseInt(win.style.zIndex) - 1;
+  const icons = document.querySelectorAll('.icon');
+  icons.forEach(icon => {
+    icon.addEventListener('click', () => {
+      const target = icon.getAttribute('data-target');
+      const window = document.querySelector(`.window--${target}`);
+      if (window) {
+        window.classList.add('active');
+        bringToFront(window);
+      }
     });
-    window.style.zIndex = maxZIndex + 1;
-  }
-}
+  });
 
-  
+  function hideProjects(projects) {
+    projects.forEach(project => {
+      project.style.display = 'none';
+    });
+  }
+
+  function showProjects(projects) {
+    projects.forEach(project => {
+      project.style.display = 'flex';
+    });
+  }
+
+  function bringToFront(window) {
+    const windows = document.querySelectorAll('.window');
+    let maxZIndex = 0;
+
+    windows.forEach(win => {
+      const zIndex = parseInt(win.style.zIndex);
+      if (!isNaN(zIndex) && zIndex > maxZIndex) {
+        maxZIndex = zIndex;
+      }
+    });
+
+    window.style.zIndex = maxZIndex + 1;
+
+    window.addEventListener('touchstart', onTouchStart, { passive: false });
+
+    function onTouchStart() {
+      windows.forEach(win => {
+        win.style.zIndex = parseInt(win.style.zIndex) - 1;
+      });
+      window.style.zIndex = maxZIndex + 1;
+    }
+  }
+
+
+
+
+
+
+
+
+
+
 
   const windows = document.querySelectorAll('.window');
   windows.forEach(window => {
@@ -121,61 +111,31 @@ function bringToFront(window) {
     });
   });
 
+  const projectIcons = document.querySelectorAll('.project');
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  projectIcons.forEach(icon => {
+    icon.addEventListener('click', () => {
+      const projectId = icon.getAttribute('data-id');
+      const projectDetailsWindow = document.querySelector(`.window--project-details[data-project-id="${projectId}"]`);
+      if (projectDetailsWindow) {
+        projectDetailsWindow.classList.add('active');
+        bringToFront(projectDetailsWindow);
+      }
+    });
+  });
 
 
 
   const projectDetailsWindows = document.querySelectorAll('.window--project-details');
 
-  // Parcourir tous les éléments et les cacher
   projectDetailsWindows.forEach(window => {
-    window.style.display = 'none';
-  });
-
-  // Sélectionnez tous les éléments avec la classe "project"
-  const projectIcons = document.querySelectorAll('.project');
-
-  // Ajouter un gestionnaire d'événement à chaque icône de projet
-  projectIcons.forEach(icon => {
-    icon.addEventListener('click', () => {
-      // Récupérer l'ID du projet associé à l'icône
-      const projectId = icon.getAttribute('data-id');
-      // Sélectionner la fenêtre de détails du projet correspondante
-      const projectDetailsWindow = document.querySelector(`.window--project-details[data-project-id="${projectId}"]`);
-      // Afficher la fenêtre de détails du projet correspondante
-      projectDetailsWindow.style.display = 'block';
+    const closeButtons = window.querySelectorAll('.title-bar__close');
+    closeButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        window.classList.remove('active');
+      });
     });
   });
-
-  // Sélectionnez tous les éléments avec la classe "title-bar__close"
-  const closeButtons = document.querySelectorAll('.title-bar__close');
-
-  // Ajouter un gestionnaire d'événement à chaque bouton de fermeture
-  closeButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      // Trouver la fenêtre parente et la cacher
-      const window = button.closest('.window--project-details');
-      window.style.display = 'none';
-    });
-  });
-
-
-
-
 
 
 
