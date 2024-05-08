@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-
+////gsap windows
 
 
 // Animation d'ouverture des fenêtres au chargement de la page
@@ -147,7 +147,7 @@ icons.forEach(icon => {
 });
 
 
-
+////gsap windows
 
 
 

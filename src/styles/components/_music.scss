@@ -1,30 +1,20 @@
 .window--music {
-
+  width: 400px;
 
   .content {
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-  
 
     .audio-player {
-
-
       .audio-info {
+        .audio-title {}
 
-        .audio-title {
-        }
-
-        .audio-image {
-        }
-
+        .audio-image {}
       }
 
       .audio-controls {
-     
-        
-
         .audio-controls__control-buttons {
           margin: 10px;
           padding: 10px;
@@ -36,7 +26,6 @@
           button {
             border: none;
             background-color: none;
-            
           }
         }
       }
@@ -44,33 +33,34 @@
   }
 }
 
-
 .music-section__volume-control {
   position: absolute;
   transform: rotate(270deg);
   right: 0; /* Aligner l'élément sur la droite */
   
-}
-.music-section__volume-control input {
-  width: 100%; /* Pour remplir complètement le conteneur */
-  height: 100%;
-  appearance: none; /* Supprimer les styles par défaut */
-  background-color: #F1DCEF; /* Fond transparent */
-  border: none; /* Supprimer la bordure */
-  outline: none; /* Supprimer l'effet de focus */
-  padding: 0; /* Pas de rembourrage */
-  margin: 0; /* Pas de marge */
-  cursor: pointer; /* Curseur pointer */
-}
-.music-section__volume-control input::-webkit-slider-thumb {
-  background-color: black; /* Couleur de la boule pour les navigateurs WebKit */
+  input {
+    width: 100%; /* Pour remplir complètement le conteneur */
+    height: 100%;
+    appearance: none; /* Supprimer les styles par défaut */
+    background-color: #F1DCEF; /* Fond transparent */
+    border: none; /* Supprimer la bordure */
+    outline: none; /* Supprimer l'effet de focus */
+    padding: 0; /* Pas de rembourrage */
+    margin: 0; /* Pas de marge */
+    cursor: pointer; /* Curseur pointer */
+
+    &::-webkit-slider-thumb {
+      background-color: black; /* Couleur de la boule pour les navigateurs WebKit */
+    }
+
+    &::-moz-range-thumb {
+      background-color: black; /* Couleur de la boule pour les navigateurs Mozilla */
+    }
+  }
 }
 
-.music-section__volume-control input::-moz-range-thumb {
-  background-color: black; /* Couleur de la boule pour les navigateurs Mozilla */
-}
 .audio-controls__toggle img {
   width: 30px;
   height: 30px;
-  margin:  0px 30px;
+  margin: 0px 30px;
 }
