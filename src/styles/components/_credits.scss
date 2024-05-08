@@ -2,8 +2,11 @@
     &--credits {
 
       .content {
+        display: block;
+        margin: 0 auto;
         &--credits {
           &__paragraph {
+            margin: 20px;
             font-size: 23px;
           }
         }

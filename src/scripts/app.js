@@ -47,19 +47,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function bringToFront(window) {
     const windows = document.querySelectorAll('.window');
-    let maxZIndex = 0;
-
+    let maxZIndex = 2;
+  
     windows.forEach(win => {
       const zIndex = parseInt(win.style.zIndex);
       if (!isNaN(zIndex) && zIndex > maxZIndex) {
         maxZIndex = zIndex;
       }
     });
-
+  
     window.style.zIndex = maxZIndex + 1;
-
+  
     window.addEventListener('touchstart', onTouchStart, { passive: false });
-
+  
     function onTouchStart() {
       windows.forEach(win => {
         win.style.zIndex = parseInt(win.style.zIndex) - 1;
@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
       window.style.zIndex = maxZIndex + 1;
     }
   }
-
+  
 
 
 

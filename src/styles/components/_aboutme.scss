@@ -4,8 +4,16 @@
   height: auto;
 
   .about-content {
-    padding: 10px;
+    padding: 20px;
     .about-section {
+
+      .about-section__title {
+        font-size: 32px;
+        margin: 0%;
+        padding: 0%;
+     }
+ 
+
       .about-section__content {
         display: flex;
         align-items: center;
@@ -18,13 +26,7 @@
         
         }
         
-        .about-section__title {
-           font-size: 32px;
-           margin: 0%;
-           padding: 0%;
-        }
-    
-
+     
         .about-section__image {
           flex-shrink: 0;
           margin-left: 10px;

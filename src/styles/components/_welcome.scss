@@ -1,5 +1,6 @@
 .window {
   &--me {
+    z-index: 1;
     .title-bar {
       background-color: #F1DCEF;
       padding: 5px;

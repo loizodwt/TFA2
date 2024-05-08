@@ -21,6 +21,7 @@ html, body{
   font-family: "lores-12", sans-serif;
   line-height: 150%;
   overflow: hidden;
+  cursor: url('../assets/images/cross.png');
   
 
 }
@@ -29,9 +30,9 @@ body {
   display: flex;
   flex-direction: column;
   background-color: #ffffff;
-  background-image: url(../assets/images/loizo.png), url(../assets/images/back3.png);
-  background-size: 50% auto, auto; /* Taille maximale de 400px pour le premier arrière-plan */
-  background-repeat: no-repeat, repeat;
+  background-image: url(../assets/images/loizo2.svg), url(../assets/images/fond6.svg);
+  background-size: 40% auto, auto; 
+  background-repeat: no-repeat;
   background-position: center, center;
 }
 
@@ -43,13 +44,6 @@ body {
 .content {
   flex: 1;
 }
-
-
-
-body {
-  body { cursor: url('../assets/cursor/move.cur') x y, auto; }
-}
-
 
 
 
