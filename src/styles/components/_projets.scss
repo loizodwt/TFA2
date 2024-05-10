@@ -190,8 +190,13 @@
     .project-details-content__header {
       display: flex;
       align-items: center;
-      justify-content: space-between;
 
+
+      @media (max-width: 768px) {
+        flex-direction: column-reverse; /* Inverser l'ordre sur mobile */
+     
+        justify-content: space-between;
+      }
     }
 
     .project-details-content__title {
@@ -203,10 +208,14 @@
     }
 
     .project-details-content__text{
-      max-width: 300px;
+      max-width: 500px;
       margin: 0%;
       margin-top: 8px;
       margin-bottom: 8px;
+
+      @media (max-width: 768px) {
+        margin-top: 20px;
+      }
   
     }
     .project-details-content__image {
@@ -214,6 +223,8 @@
       height: auto;
       border-radius: 10px;
       margin-top: 20px;
+      margin-right: 20px;
+      
     }
     .project-details-content__button {
       font-family: "lores-12", sans-serif;
