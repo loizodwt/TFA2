@@ -294,9 +294,9 @@ icons.forEach(icon => {
   adjustVolume();
   
   const musiques = [
-    { title: 'Musique 1', source: './assets/musiques/musique1.mp3', image: 'chemin/vers/image1.jpg' },
-    { title: 'Musique 2', source: './assets/musiques/musique2.mp3', image: 'chemin/vers/image2.jpg' },
-    { title: 'Musique 3', source: './assets/musiques/musique3.mp3', image: 'chemin/vers/image3.jpg' }
+    { title: 'Strawberry Cake', source: './assets/musiques/nobonoko_Strawberry_Cake.wav', image: 'chemin/vers/image1.jpg' },
+    { title: 'Picobossa', source: './assets/musiques/nobonoko_Picobossa.wav', image: './assets/images/picobossa.png' },
+    { title: 'Aerodynamics', source: './assets/musiques/Tohomoko_Aerodynamics.wav', image: 'chemin/vers/image3.jpg' }
   ];
   
   let currentMusicIndex = 0;
@@ -359,18 +359,21 @@ icons.forEach(icon => {
   
 
 
+
+
+
+
 // Sélectionnez le fichier audio
-//const clicSound = new Audio('./assets/musiques/clic2.wav');
+const clicSound = new Audio('./assets/musiques/clic2.wav');
 
 // Fonction pour jouer le son à chaque clic
 function playClicSound() {
+  clicSound.currentTime = 0; // Réinitialiser la lecture du son à partir du début
   clicSound.play();
 }
 
-// Écoutez chaque clic sur la page
-document.body.addEventListener('click', playClicSound);
-
-
+// Écoutez chaque clic sur la page, y compris les clics spontanés
+document.body.addEventListener('mousedown', playClicSound);
 
 
 
