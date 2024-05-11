@@ -1,15 +1,20 @@
 $footer-color: #F1DCEF;
 $footer-text-color: #8A4484;
-$padding: 10px;
 
 .footer {
   position: relative;
   background-color: $footer-color;
   color: $footer-text-color;
-  padding: $padding;
+  padding: 10px;
+  padding-top: 20px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   z-index: 0;
+
+  @media screen and (min-width: 768px) {
+    padding-top: 0px;
+  }
 
   &__content1 {
     margin-left: 20px;
@@ -28,10 +33,19 @@ $padding: 10px;
     margin-right: 10px;
     margin-left: 4vw;
     font-size: 20px;
+
+      
   }
 
   &__text {
-    font-size: 20px;
+    font-size: 16px;
+    display: none;
+    
+    @media screen and (min-width: 768px) {
+      font-size: 23px;
+      display: block;
+    }
+    
   }
 
   &::before {

@@ -294,9 +294,9 @@ icons.forEach(icon => {
   adjustVolume();
   
   const musiques = [
-    { title: 'Strawberry Cake', source: './assets/musiques/nobonoko_Strawberry_Cake.wav', image: 'chemin/vers/image1.jpg' },
-    { title: 'Picobossa', source: './assets/musiques/nobonoko_Picobossa.wav', image: './assets/images/boosa2.png' },
-    { title: 'Aerodynamics', source: './assets/musiques/Tohomoko_Aerodynamics.wav', image: 'chemin/vers/image3.jpg' }
+    { title: 'Strawberry Cake - Nobonoko', source: './assets/musiques/nobonoko_Strawberry_Cake.wav', image: './assets/images/strawberry_cake.jpg' },
+    { title: 'Picobossa - Nobonoko', source: './assets/musiques/nobonoko_Picobossa.wav', image: './assets/images/picobossa.png' },
+    { title: 'Aerodynamics - Tohomoko', source: './assets/musiques/Tohomoko_Aerodynamics.wav', image: './assets/images/aerodynamics.jpg' }
   ];
   
   let currentMusicIndex = 0;

@@ -1,6 +1,31 @@
 .window--music {
-  width: 400px;
+  width: 350px;
 
+  @media screen and (min-width: 768px) {
+    width: 400px;
+  }
+  
+  
+  
+
+
+  .lace-image-container {
+    position: relative;
+    width: 350%;
+    height: 50px;
+    overflow: hidden;
+
+    
+    @media screen and (min-width: 768px) {
+      width: 300%;
+    }
+    
+
+
+  }
+  
+  
+  
   .content {
     display: flex;
     justify-content: center;
@@ -9,12 +34,12 @@
 
     .audio-player {
       .audio-info {
-        .audio-title {}
+       
 
         .audio-image {
           max-width: 200px;
           border-radius: 15px;
-          border: 8px solid #F1DCEF;
+          border: 5px solid #F1DCEF;
         }
       }
 
@@ -28,9 +53,11 @@
           display: flex;
           justify-content: space-between;
           align-items: center;
+          width: 250px;
 
           button {
             border: none;
+            background-color: #ffffff00;
            
           }
         }
@@ -47,9 +74,14 @@
 
 .music-section__volume-control {
   position: absolute;
+  right: 260px; 
+  bottom: 260px;
   transform: rotate(270deg);
-  right: 0; 
 
+  @media screen and (min-width: 768px) {
+    right: 0px; 
+  }
+  
   
 
   input {
