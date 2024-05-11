@@ -21,6 +21,17 @@ document.addEventListener('DOMContentLoaded', () => {
     showProjects(schoolProjects);
   });
 
+
+
+
+
+
+
+
+
+
+
+
   const icons = document.querySelectorAll('.icon');
   icons.forEach(icon => {
     icon.addEventListener('click', () => {
@@ -151,49 +162,38 @@ icons.forEach(icon => {
 
 
   
-  const projects = document.querySelectorAll('.project');
-  let activeProjectDetailsWindows = {}; // Garder une référence à la fenêtre active pour chaque projet
+const projects = document.querySelectorAll('.project');
+let activeProjectDetailsWindows = {}; // Garder une référence à la fenêtre active pour chaque projet
 
-  projects.forEach(project => {
-    project.addEventListener('click', () => {
-      const projectId = project.getAttribute('data-id');
-      const content = project.getAttribute('data-content');
-      if (!activeProjectDetailsWindows[projectId]) {
-        activeProjectDetailsWindows[projectId] = createProjectDetailsWindow(content);
+projects.forEach(project => {
+  project.addEventListener('click', () => {
+    const projectId = project.getAttribute('data-id');
+    const projectDetailsWindow = document.querySelector(`.window--project-details[data-project-id="${projectId}"]`);
+
+    if (!activeProjectDetailsWindows[projectId]) {
+      activeProjectDetailsWindows[projectId] = projectDetailsWindow;
+      activeProjectDetailsWindows[projectId].classList.add('active');
+      makeDraggable(activeProjectDetailsWindows[projectId]); // Rendre la fenêtre draggable
+    } else {
+      const isActive = activeProjectDetailsWindows[projectId].classList.contains('active');
+      if (!isActive) {
         activeProjectDetailsWindows[projectId].classList.add('active');
-        makeDraggable(activeProjectDetailsWindows[projectId]); // Rendre la fenêtre draggable
-      } else {
-        bringToFront(activeProjectDetailsWindows[projectId]);
+        bringToFront(activeProjectDetailsWindows[projectId]); // Ramener la fenêtre au premier plan
       }
+    }
+  });
+});
+
+const projectDetailsWindows = document.querySelectorAll('.window--project-details');
+
+projectDetailsWindows.forEach(window => {
+  const closeButtons = window.querySelectorAll('.title-bar__close');
+  closeButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      window.classList.remove('active');
     });
   });
-
-  const projectIcons = document.querySelectorAll('.project');
-
-  projectIcons.forEach(icon => {
-    icon.addEventListener('click', () => {
-      const projectId = icon.getAttribute('data-id');
-      const projectDetailsWindow = document.querySelector(`.window--project-details[data-project-id="${projectId}"]`);
-      if (projectDetailsWindow) {
-        projectDetailsWindow.classList.add('active');
-        bringToFront(projectDetailsWindow);
-      }
-    });
-  });
-
-
-
-  const projectDetailsWindows = document.querySelectorAll('.window--project-details');
-
-  projectDetailsWindows.forEach(window => {
-    const closeButtons = window.querySelectorAll('.title-bar__close');
-    closeButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        window.classList.remove('active');
-      });
-    });
-  });
-
+});
 
 
 
