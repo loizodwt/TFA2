@@ -93,12 +93,11 @@
             margin: 10px;
 
             .about-column__item {
-              position: relative; /* Pour positionner l'icône SVG */
-              padding-left: 20px; /* Espace pour l'icône */
+              position: relative;
+              padding-left: 20px; 
 
               &:before {
-                content: url('../../assets/images/arrow2.png'); /* Remplacez le chemin de l'image par le vôtre */
-                position: absolute;
+                content: url('../../assets/images/arrow2.png'); 
                 left: 0;
                 top: 50%;
                 transform: translateY(-50%);
@@ -108,7 +107,7 @@
         }
 
         .about-column:last-child {
-          margin-right: 0; /* Aucun espace à droite pour la dernière colonne */
+          margin-right: 0; 
         }
       }
     }

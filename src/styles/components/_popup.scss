@@ -230,17 +230,17 @@
 }
 
 .rotation-span img {
-  width: 24px; /* Correction de la valeur de largeur */
+  width: 24px; 
   height: 24px;
-  animation: rotateAnimation 1s infinite alternate; /* Utilisation de l'option "alternate" pour alterner la direction de l'animation */
+  animation: rotateAnimation 1s infinite alternate;
 }
 
 @keyframes rotateAnimation {
   0% {
-    transform: rotate(0deg); /* L'angle de départ est de 0 degré (gauche) */
+    transform: rotate(0deg); 
   }
   100% {
-    transform: rotate(30deg); /* À la fin de l'animation, l'angle de rotation est de 30 degrés (droite) */
+    transform: rotate(30deg); 
   }
 }
 
@@ -264,12 +264,12 @@
   .about-section__image img {
     margin: 0%;
     padding: 0%;
-    width: 50px; /* Redimensionner l'image à 100px de largeur sur les appareils mobiles */
-    height: 50px; /* Redimensionner l'image à 100px de hauteur sur les appareils mobiles */
+    width: 50px; 
+    height: 50px; 
   }
 
   .about-section__text {
-    width: 250px; /* Augmenter la largeur maximale du texte à 300px sur les appareils mobiles */
+    width: 250px; 
   }
 }
 
@@ -312,7 +312,7 @@
   }
 
   .about-section__text {
-    width: 250px; /* Augmenter la largeur maximale du texte à 300px sur les appareils mobiles */
+    width: 250px; 
   }
 
      

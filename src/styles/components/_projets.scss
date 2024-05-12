@@ -19,7 +19,7 @@
     .project-list {
       display: flex;
       flex-wrap: wrap;
-      justify-content: flex-start; // Pour aligner les icônes à gauche
+      justify-content: flex-start; 
    
      
     }
@@ -145,12 +145,12 @@
     margin-top: 5px;
     margin-left: 13px;
     background-color: #d4c2d3;
-    margin-right: 5px; // Ajoutez une marge entre les boutons si nécessaire
-    padding: 10px 15px; // Ajoutez du rembourrage pour un meilleur aspect
-    border-bottom: none; /* Supprime la bordure inférieure */
+    margin-right: 5px; 
+    padding: 10px 15px; 
+    border-bottom: none;
     border-radius: 5px 5px 0 0; 
-    border-top: 1px solid #8A4484; /* Ajoute une bordure supérieure de 2 pixels */
-    border-left: 1px solid #8A4484; /* Ajoute une bordure gauche de 2 pixels */
+    border-top: 1px solid #8A4484; 
+    border-left: 1px solid #8A4484; 
     border-right: 1px solid #8A4484;
     z-index: 2;
     cursor: pointer;
@@ -193,7 +193,7 @@
 
 
       @media (max-width: 768px) {
-        flex-direction: column-reverse; /* Inverser l'ordre sur mobile */
+        flex-direction: column-reverse; 
      
         justify-content: space-between;
       }
