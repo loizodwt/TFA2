@@ -1,7 +1,12 @@
 .window {
  
   &--me {
+   height: 310px;
 
+   @media screen and (min-width: 768px) {
+    height: 750px;
+  }
+  
     z-index: 1;
     .title-bar {
       background-color: #F1DCEF;
@@ -45,6 +50,7 @@
         max-width: 900px;
         font-size: 16px;
         line-height: 140%;
+        
 
         @media screen and (min-width: 768px) {
           font-size: 23px;

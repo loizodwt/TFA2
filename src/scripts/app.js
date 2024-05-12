@@ -2,6 +2,8 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   
+
+  
   // Filtre perso scolaire et icône déclencheur
   const personalButton = document.querySelector('.filter-button--personal');
   const schoolButton = document.querySelector('.filter-button--school');
