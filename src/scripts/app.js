@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('click', () => {
       bringToFront(window);
     });
-    const controls = window.querySelector('.title-bar__controls'); // Changez .controls à .title-bar__controls
+    const controls = window.querySelector('.title-bar__controls');
     if (controls) {
       controls.querySelectorAll('div').forEach(control => {
         control.addEventListener('click', () => {
@@ -118,24 +118,24 @@ document.addEventListener('DOMContentLoaded', () => {
 ////gsap windows
 
 
-// Animation d'ouverture des fenêtres au chargement de la page
+
 windows.forEach(window => {
-  // Définir les propriétés de départ pour chaque fenêtre
+
   gsap.set(window, {
     opacity: 0,
-    y: '-100px' // Déplacer chaque fenêtre vers le bas de 100px
+    y: '-100px' 
   });
 
-  // Utiliser GSAP pour animer l'ouverture de chaque fenêtre
+
   gsap.to(window, {
     opacity: 1,
-    y: 0, // Position finale (pas de déplacement vertical)
-    duration: 0.5, // Durée de l'animation
-    ease: 'power2.out' // Courbe d'accélération
+    y: 0, 
+    duration: 0.5,
+    ease: 'power2.out'
   });
 });
 
-// Gestion de l'ouverture des fenêtres au clic sur les icônes
+
 icons.forEach(icon => {
   icon.addEventListener('click', () => {
     const target = icon.getAttribute('data-target');
@@ -143,16 +143,16 @@ icons.forEach(icon => {
 
     gsap.set(window, {
       opacity: 0,
-      yPercent: -50, // Centrer verticalement
-      y: '-100px' // Déplacer chaque fenêtre vers le bas de 100px
+      yPercent: -50,
+      y: '-100px' 
     });
   
-    // Utiliser GSAP pour animer l'ouverture de chaque fenêtre
+
     gsap.to(window, {
       opacity: 1,
-      y: '0%', // Position finale (centrée verticalement)
-      duration: 0.5, // Durée de l'animation
-      ease: 'power2.out' // Courbe d'accélération
+      y: '0%',
+      duration: 0.5, 
+      ease: 'power2.out'
     });
   });
 });
@@ -165,7 +165,7 @@ icons.forEach(icon => {
 
   
 const projects = document.querySelectorAll('.project');
-let activeProjectDetailsWindows = {}; // Garder une référence à la fenêtre active pour chaque projet
+let activeProjectDetailsWindows = {};
 
 projects.forEach(project => {
   project.addEventListener('click', () => {
@@ -180,7 +180,7 @@ projects.forEach(project => {
       const isActive = activeProjectDetailsWindows[projectId].classList.contains('active');
       if (!isActive) {
         activeProjectDetailsWindows[projectId].classList.add('active');
-        bringToFront(activeProjectDetailsWindows[projectId]); // Ramener la fenêtre au premier plan
+        bringToFront(activeProjectDetailsWindows[projectId]); 
       }
     }
   });
@@ -207,7 +207,7 @@ projectDetailsWindows.forEach(window => {
     let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
     const titleBar = element.querySelector('.title-bar');
   
-    // Événement de souris pour les ordinateurs de bureau
+
     if (titleBar) {
       titleBar.onmousedown = dragMouseDown;
       titleBar.addEventListener('touchstart', onTouchStart, { passive: false });
@@ -365,16 +365,16 @@ projectDetailsWindows.forEach(window => {
 
 
 
-// Sélectionnez le fichier audio
+// CLICCCCCCCCCCCC
 const clicSound = new Audio('./assets/musiques/clic2.wav');
 
-// Fonction pour jouer le son à chaque clic
+
 function playClicSound() {
-  clicSound.currentTime = 0; // Réinitialiser la lecture du son à partir du début
+  clicSound.currentTime = 0; 
   clicSound.play();
 }
 
-// Écoutez chaque clic sur la page, y compris les clics spontanés
+
 document.body.addEventListener('mousedown', playClicSound);
 
 
@@ -400,7 +400,7 @@ if (paintWindow) {
   let isPainting = false;
   let lastX = 0;
   let lastY = 0;
-  let currentColor = '#000000'; // Default color is black
+  let currentColor = '#000000'; 
 
   canvas.addEventListener('mousedown', (e) => {
     isPainting = true;
