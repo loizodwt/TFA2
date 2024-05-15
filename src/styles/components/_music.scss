@@ -49,7 +49,7 @@
           margin: 10px;
           padding: 10px;
           border-radius: 20px;
-          background-color: #F5F5F5;
+          background-color: #fef6fd;
           display: flex;
           justify-content: space-between;
           align-items: center;
@@ -72,45 +72,97 @@
   }
 }
 
+
+
+
+
 .music-section__volume-control {
   position: absolute;
-  right: 260px; 
+  right: 260px;
   bottom: 260px;
   transform: rotate(270deg);
 
   @media screen and (min-width: 768px) {
-    right: 0px; 
+    right: 0px;
   }
-  
-  
 
   input {
-    width: 100%; 
+    width: 100%;
     height: 100%;
-    appearance: none; 
-    background-color: #F1DCEF; 
-    border: none; 
-    outline: none; 
-    padding: 0; 
-    margin: 0; 
-    cursor: pointer; 
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    appearance: none;
+
+    &::-webkit-slider-runnable-track {
+      background-color: #F1DCEF;
+      border-radius: 10px;
+      height: 10px; 
+    }
+
+    &::-moz-range-track {
+      background-color: #F1DCEF;
+      height: 10px; 
+    }
 
     &::-webkit-slider-thumb {
-      background-color: black; 
+      background-image: url('../../assets/images/arrow2.png');
+      background-size: cover; 
+      background-repeat: no-repeat;
+      background-position: center;
+      width: 20px;
+      height: 20px;
+      border: none; 
+      border-radius: 50%;
+      appearance: none; 
+      margin-top: -7px; 
     }
 
     &::-moz-range-thumb {
-      background-color: black;
+      background-image: url('../../assets/images/arrow2.png');
+      background-size: cover; 
+      background-repeat: no-repeat;
+      background-position: center;
+      width: 20px; 
+      height: 20px; 
+      border: none; 
+      border-radius: 50%;
+      transform: scale(1.5); 
+      margin-top: -7px; 
     }
+  }
+}
 
 
+
+
+
+.audio-controls__progress-bar {
+  margin: 0 auto;
+  width: 80%;
+  height: 10px; 
+  border: none;
+  border-radius: 5px;
+  overflow: hidden;
+  appearance: none;
+
+  &::-webkit-progress-bar {
+    background-color: #fef6fd;
+  }
+
+  &::-webkit-progress-value {
+    background-color: #F1DCEF; 
+  }
+
+  &::-moz-progress-bar {
+    background-color: #F1DCEF;
   }
 
 
-
-
-  
 }
+
+
+
 
 .audio-controls__toggle img {
   display: flex;
