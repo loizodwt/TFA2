@@ -6,7 +6,6 @@ $footer-text-color: #8A4484;
   background-color: $footer-color;
   color: $footer-text-color;
   padding: 10px;
-  padding-top: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -17,7 +16,7 @@ $footer-text-color: #8A4484;
   }
 
   &__content1 {
-    padding: 5px;
+    margin: 0;
     padding-left: 15px;
     display: flex;
     justify-content: flex-start;
@@ -25,12 +24,14 @@ $footer-text-color: #8A4484;
   }
 
   &__content2 {
+
     display: flex;
     justify-content: flex-end;
     align-items: center;
   }
 
   &__time {
+    margin: 0;
     margin-right: 10px;
     margin-left: 4vw;
     font-size: 20px;
