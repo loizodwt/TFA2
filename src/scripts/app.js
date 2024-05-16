@@ -4,26 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
   
 
   
-  // Filtre perso scolaire et icône déclencheur
-  const personalButton = document.querySelector('.filter-button--personal');
-  const schoolButton = document.querySelector('.filter-button--school');
-  const personalProjects = document.querySelectorAll('.project--personal');
-  const schoolProjects = document.querySelectorAll('.project--school');
-
-  // Cacher les projets personnels au chargement de la page
-  hideProjects(personalProjects);
-
-  personalButton.addEventListener('click', () => {
-    hideProjects(schoolProjects);
-    showProjects(personalProjects);
-  });
-
-  schoolButton.addEventListener('click', () => {
-    hideProjects(personalProjects);
-    showProjects(schoolProjects);
-  });
-
-
 
 
 
