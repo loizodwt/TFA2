@@ -98,44 +98,49 @@ document.addEventListener('DOMContentLoaded', () => {
 ////gsap windows
 
 
-
 windows.forEach(window => {
 
+  // Initialiser les fenêtres avec opacité à 0, y à -100px et échelle à 0
   gsap.set(window, {
     opacity: 0,
-    y: '-100px' 
+    y: '-100px',
+    scale: 0
   });
 
-
+  // Animer les fenêtres à opacité 1, y à 0 et échelle à 1
   gsap.to(window, {
     opacity: 1,
     y: 0, 
+    scale: 1,
     duration: 0.5,
     ease: 'power2.out'
   });
 });
-
 
 icons.forEach(icon => {
   icon.addEventListener('click', () => {
     const target = icon.getAttribute('data-target');
     const window = document.querySelector(`.window--${target}`);
 
+    // Initialiser la fenêtre cible avec opacité à 0, y à -100px et échelle à 0
     gsap.set(window, {
       opacity: 0,
       yPercent: -50,
-      y: '-100px' 
+      y: '-100px',
+      scale: 0
     });
-  
 
+    // Animer la fenêtre cible à opacité 1, y à 0% et échelle à 1
     gsap.to(window, {
       opacity: 1,
       y: '0%',
-      duration: 0.5, 
+      scale: 1,
+      duration: 0.3, 
       ease: 'power2.out'
     });
   });
 });
+
 
 ////gsap windows
 
