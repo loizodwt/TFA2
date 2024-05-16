@@ -126,14 +126,12 @@ icons.forEach(icon => {
     gsap.set(window, {
       opacity: 0,
       yPercent: -50,
-      y: '-100px',
       scale: 0
     });
 
     // Animer la fenêtre cible à opacité 1, y à 0% et échelle à 1
     gsap.to(window, {
       opacity: 1,
-      y: '0%',
       scale: 1,
       duration: 0.3, 
       ease: 'power2.out'
