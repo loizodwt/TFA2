@@ -3,15 +3,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   
 
-  
-
-
-
-
-
-
-
-
 
 
   const icons = document.querySelectorAll('.icon');
@@ -26,17 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  function hideProjects(projects) {
-    projects.forEach(project => {
-      project.style.display = 'none';
-    });
-  }
-
-  function showProjects(projects) {
-    projects.forEach(project => {
-      project.style.display = 'flex';
-    });
-  }
 
   function bringToFront(window) {
     const windows = document.querySelectorAll('.window');
