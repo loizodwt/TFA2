@@ -1,42 +1,15 @@
 "use strict";
 
-
 document.addEventListener('DOMContentLoaded', () => {
   const icons = document.querySelectorAll('.icon');
-  const windows = document.querySelectorAll('.window');
-  const projects = document.querySelectorAll('.project');
-
   icons.forEach(icon => {
     icon.addEventListener('click', () => {
       const target = icon.getAttribute('data-target');
       const window = document.querySelector(`.window--${target}`);
       if (window) {
+        window.style.display = 'block';
+        gsap.fromTo(window, { opacity: 0, y: '-100px', scale: 0 }, { opacity: 1, y: 0, scale: 1, duration: 0.5, ease: 'power2.out' });
         bringToFront(window);
-      }
-    });
-  });
-
-  windows.forEach(window => {
-    makeDraggable(window);
-    window.addEventListener('click', () => {
-      bringToFront(window);
-    });
-    const controls = window.querySelector('.title-bar__controls');
-    if (controls) {
-      controls.querySelectorAll('div').forEach(control => {
-        control.addEventListener('click', () => {
-          window.classList.remove('active');
-        });
-      });
-    }
-  });
-
-  projects.forEach(project => {
-    project.addEventListener('click', () => {
-      const projectId = project.getAttribute('data-id');
-      const projectDetailsWindow = document.querySelector(`.window--project-details[data-project-id="${projectId}"]`);
-      if (projectDetailsWindow) {
-        bringToFront(projectDetailsWindow);
       }
     });
   });
@@ -53,7 +26,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     window.style.zIndex = maxZIndex + 1;
-    window.classList.add('active');
 
     window.addEventListener('touchstart', onTouchStart, { passive: false });
 
@@ -65,10 +37,61 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  const windows = document.querySelectorAll('.window');
+  windows.forEach(window => {
+    makeDraggable(window);
+    window.addEventListener('click', () => {
+      bringToFront(window);
+    });
+    const controls = window.querySelector('.title-bar__controls');
+    if (controls) {
+      controls.querySelectorAll('div').forEach(control => {
+        control.addEventListener('click', () => {
+          window.style.display = 'none';
+        });
+      });
+    }
+  });
+
+  const projects = document.querySelectorAll('.project');
+  let activeProjectDetailsWindows = {};
+
+  projects.forEach(project => {
+    project.addEventListener('click', () => {
+      const projectId = project.getAttribute('data-id');
+      const projectDetailsWindow = document.querySelector(`.window--project-details[data-project-id="${projectId}"]`);
+
+      if (!activeProjectDetailsWindows[projectId]) {
+        activeProjectDetailsWindows[projectId] = projectDetailsWindow;
+        activeProjectDetailsWindows[projectId].style.display = 'block';
+        gsap.fromTo(projectDetailsWindow, { opacity: 0, y: '-100px', scale: 0 }, { opacity: 1, y: 0, scale: 1, duration: 0.5, ease: 'power2.out' });
+        makeDraggable(activeProjectDetailsWindows[projectId]);
+      } else {
+        const isActive = activeProjectDetailsWindows[projectId].style.display === 'block';
+        if (!isActive) {
+          activeProjectDetailsWindows[projectId].style.display = 'block';
+          gsap.fromTo(projectDetailsWindow, { opacity: 0, y: '-100px', scale: 0 }, { opacity: 1, y: 0, scale: 1, duration: 0.5, ease: 'power2.out' });
+        }
+      }
+      bringToFront(activeProjectDetailsWindows[projectId]);
+    });
+  });
+
+  const projectDetailsWindows = document.querySelectorAll('.window--project-details');
+
+  projectDetailsWindows.forEach(window => {
+    const closeButtons = window.querySelectorAll('.title-bar__close');
+    closeButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        window.style.display = 'none';
+      });
+    });
+  });
+
   function makeDraggable(element) {
     let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
     const titleBar = element.querySelector('.title-bar');
-  
+
     if (titleBar) {
       titleBar.onmousedown = dragMouseDown;
       titleBar.addEventListener('touchstart', onTouchStart, { passive: false });
@@ -76,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
       element.onmousedown = dragMouseDown;
       element.addEventListener('touchstart', onTouchStart, { passive: false });
     }
-  
+
     function dragMouseDown(e) {
       e = e || window.event;
       e.preventDefault();
@@ -85,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
       document.onmouseup = closeDragElement;
       document.onmousemove = elementDrag;
     }
-  
+
     function onTouchStart(e) {
       const touch = e.touches[0];
       pos3 = touch.clientX;
@@ -93,7 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
       element.addEventListener('touchmove', onTouchMove, { passive: false });
       element.addEventListener('touchend', onTouchEnd);
     }
-  
+
     function onTouchMove(e) {
       const touch = e.touches[0];
       e.preventDefault();
@@ -104,12 +127,12 @@ document.addEventListener('DOMContentLoaded', () => {
       element.style.top = (element.offsetTop - pos2) + "px";
       element.style.left = (element.offsetLeft - pos1) + "px";
     }
-  
+
     function onTouchEnd() {
       element.removeEventListener('touchmove', onTouchMove);
       element.removeEventListener('touchend', onTouchEnd);
     }
-  
+
     function elementDrag(e) {
       e = e || window.event;
       e.preventDefault();
@@ -120,12 +143,13 @@ document.addEventListener('DOMContentLoaded', () => {
       element.style.top = (element.offsetTop - pos2) + "px";
       element.style.left = (element.offsetLeft - pos1) + "px";
     }
-  
+
     function closeDragElement() {
       document.onmouseup = null;
       document.onmousemove = null;
     }
   }
+
 
 
 
