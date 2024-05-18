@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
         activeProjectDetailsWindows[projectId] = projectDetailsWindow;
         activeProjectDetailsWindows[projectId].style.display = 'block';
         gsap.fromTo(projectDetailsWindow, { opacity: 0, y: '-100px', scale: 0 }, { opacity: 1, y: 0, scale: 1, duration: 0.5, ease: 'power2.out' });
-        makeDraggable(activeProjectDetailsWindows[projectId]);
+        makeDraggable(projectDetailsWindow); // Utiliser makeDraggable pour les détails de projet
       } else {
         const isActive = activeProjectDetailsWindows[projectId].style.display === 'block';
         if (!isActive) {
@@ -91,15 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function makeDraggable(element) {
     let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
     const titleBar = element.querySelector('.title-bar');
-
-    if (titleBar) {
-      titleBar.onmousedown = dragMouseDown;
-      titleBar.addEventListener('touchstart', onTouchStart, { passive: false });
-    } else {
-      element.onmousedown = dragMouseDown;
-      element.addEventListener('touchstart', onTouchStart, { passive: false });
-    }
-
+  
     function dragMouseDown(e) {
       e = e || window.event;
       e.preventDefault();
@@ -108,15 +100,15 @@ document.addEventListener('DOMContentLoaded', () => {
       document.onmouseup = closeDragElement;
       document.onmousemove = elementDrag;
     }
-
+  
     function onTouchStart(e) {
       const touch = e.touches[0];
       pos3 = touch.clientX;
       pos4 = touch.clientY;
-      element.addEventListener('touchmove', onTouchMove, { passive: false });
-      element.addEventListener('touchend', onTouchEnd);
+      document.addEventListener('touchmove', onTouchMove, { passive: false });
+      document.addEventListener('touchend', onTouchEnd);
     }
-
+  
     function onTouchMove(e) {
       const touch = e.touches[0];
       e.preventDefault();
@@ -127,12 +119,12 @@ document.addEventListener('DOMContentLoaded', () => {
       element.style.top = (element.offsetTop - pos2) + "px";
       element.style.left = (element.offsetLeft - pos1) + "px";
     }
-
+  
     function onTouchEnd() {
-      element.removeEventListener('touchmove', onTouchMove);
-      element.removeEventListener('touchend', onTouchEnd);
+      document.removeEventListener('touchmove', onTouchMove);
+      document.removeEventListener('touchend', onTouchEnd);
     }
-
+  
     function elementDrag(e) {
       e = e || window.event;
       e.preventDefault();
@@ -143,15 +135,21 @@ document.addEventListener('DOMContentLoaded', () => {
       element.style.top = (element.offsetTop - pos2) + "px";
       element.style.left = (element.offsetLeft - pos1) + "px";
     }
-
+  
     function closeDragElement() {
       document.onmouseup = null;
       document.onmousemove = null;
     }
+  
+    if (titleBar) {
+      titleBar.onmousedown = dragMouseDown;
+      titleBar.addEventListener('touchstart', onTouchStart, { passive: false });
+    } else {
+      element.onmousedown = dragMouseDown;
+      element.addEventListener('touchstart', onTouchStart, { passive: false });
+    }
   }
-
-
-
+  
 
 
   const audioPlayer = document.querySelector('.audio-player audio');
