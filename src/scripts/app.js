@@ -1,57 +1,21 @@
 "use strict";
 
+
 document.addEventListener('DOMContentLoaded', () => {
-  
-
-
-
   const icons = document.querySelectorAll('.icon');
+  const windows = document.querySelectorAll('.window');
+  const projects = document.querySelectorAll('.project');
+
   icons.forEach(icon => {
     icon.addEventListener('click', () => {
       const target = icon.getAttribute('data-target');
       const window = document.querySelector(`.window--${target}`);
       if (window) {
-        window.classList.add('active');
         bringToFront(window);
       }
     });
   });
 
-
-  function bringToFront(window) {
-    const windows = document.querySelectorAll('.window');
-    let maxZIndex = 2;
-  
-    windows.forEach(win => {
-      const zIndex = parseInt(win.style.zIndex);
-      if (!isNaN(zIndex) && zIndex > maxZIndex) {
-        maxZIndex = zIndex;
-      }
-    });
-  
-    window.style.zIndex = maxZIndex + 1;
-  
-    window.addEventListener('touchstart', onTouchStart, { passive: false });
-  
-    function onTouchStart() {
-      windows.forEach(win => {
-        win.style.zIndex = parseInt(win.style.zIndex) - 1;
-      });
-      window.style.zIndex = maxZIndex + 1;
-    }
-  }
-  
-
-
-
-
-
-
-
-
-
-
-  const windows = document.querySelectorAll('.window');
   windows.forEach(window => {
     makeDraggable(window);
     window.addEventListener('click', () => {
@@ -67,110 +31,44 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-
-
-
-
-
-
-
-
-////gsap windows
-
-
-windows.forEach(window => {
-
-  // Initialiser les fenêtres avec opacité à 0, y à -100px et échelle à 0
-  gsap.set(window, {
-    opacity: 0,
-    y: '-100px',
-    scale: 0
-  });
-
-  // Animer les fenêtres à opacité 1, y à 0 et échelle à 1
-  gsap.to(window, {
-    opacity: 1,
-    y: 0, 
-    scale: 1,
-    duration: 0.5,
-    ease: 'power2.out'
-  });
-});
-
-icons.forEach(icon => {
-  icon.addEventListener('click', () => {
-    const target = icon.getAttribute('data-target');
-    const window = document.querySelector(`.window--${target}`);
-
-    // Initialiser la fenêtre cible avec opacité à 0, y à -100px et échelle à 0
-    gsap.set(window, {
-      opacity: 0,
-      yPercent: -50,
-      scale: 0
-    });
-
-    // Animer la fenêtre cible à opacité 1, y à 0% et échelle à 1
-    gsap.to(window, {
-      opacity: 1,
-      scale: 1,
-      duration: 0.3, 
-      ease: 'power2.out'
-    });
-  });
-});
-
-
-////gsap windows
-
-
-
-
-
-  
-const projects = document.querySelectorAll('.project');
-let activeProjectDetailsWindows = {};
-
-projects.forEach(project => {
-  project.addEventListener('click', () => {
-    const projectId = project.getAttribute('data-id');
-    const projectDetailsWindow = document.querySelector(`.window--project-details[data-project-id="${projectId}"]`);
-
-    if (!activeProjectDetailsWindows[projectId]) {
-      activeProjectDetailsWindows[projectId] = projectDetailsWindow;
-      activeProjectDetailsWindows[projectId].classList.add('active');
-      makeDraggable(activeProjectDetailsWindows[projectId]); // Rendre la fenêtre draggable
-    } else {
-      const isActive = activeProjectDetailsWindows[projectId].classList.contains('active');
-      if (!isActive) {
-        activeProjectDetailsWindows[projectId].classList.add('active');
-        bringToFront(activeProjectDetailsWindows[projectId]); 
+  projects.forEach(project => {
+    project.addEventListener('click', () => {
+      const projectId = project.getAttribute('data-id');
+      const projectDetailsWindow = document.querySelector(`.window--project-details[data-project-id="${projectId}"]`);
+      if (projectDetailsWindow) {
+        bringToFront(projectDetailsWindow);
       }
-    }
-  });
-});
-
-const projectDetailsWindows = document.querySelectorAll('.window--project-details');
-
-projectDetailsWindows.forEach(window => {
-  const closeButtons = window.querySelectorAll('.title-bar__close');
-  closeButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      window.classList.remove('active');
     });
   });
-});
 
+  function bringToFront(window) {
+    const windows = document.querySelectorAll('.window');
+    let maxZIndex = 2;
 
+    windows.forEach(win => {
+      const zIndex = parseInt(win.style.zIndex);
+      if (!isNaN(zIndex) && zIndex > maxZIndex) {
+        maxZIndex = zIndex;
+      }
+    });
 
-///DRAGABBLEEEEEEEEEEEEEEEEEE
+    window.style.zIndex = maxZIndex + 1;
+    window.classList.add('active');
 
+    window.addEventListener('touchstart', onTouchStart, { passive: false });
 
+    function onTouchStart() {
+      windows.forEach(win => {
+        win.style.zIndex = parseInt(win.style.zIndex) - 1;
+      });
+      window.style.zIndex = maxZIndex + 1;
+    }
+  }
 
   function makeDraggable(element) {
     let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
     const titleBar = element.querySelector('.title-bar');
   
-
     if (titleBar) {
       titleBar.onmousedown = dragMouseDown;
       titleBar.addEventListener('touchstart', onTouchStart, { passive: false });
@@ -228,13 +126,6 @@ projectDetailsWindows.forEach(window => {
       document.onmousemove = null;
     }
   }
-  
-
-
-
-
-
-
 
 
 
