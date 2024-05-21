@@ -6,7 +6,7 @@
 .window--projects {
 
 
-  height: 350px;
+  height: 400px;
 
   @media screen and (min-width: 768px) {
    height: 400px;
@@ -207,7 +207,8 @@
   
     }
     .project-details-content__image {
-      min-width: 200px;
+      width: 150px;
+
       margin-top: 20px;
       margin-right: 20px;
 
@@ -218,19 +219,22 @@
     }
 
     .project-details-content__button {
+      cursor: pointer;
       font-family: "lores-12", sans-serif;
       display: block;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
       font-size: 16px;
-      margin: 8px auto;
+      margin: 10px auto;
       padding: 10px 15px;
-       text-align: center;
-        justify-content: center;
-         align-items: center;
-             font-style: oblique;
-              color:#8A4484;
-               border: 4px double #FBD2F6;
-                text-shadow:#FBD2F6 0px 5px 5px;
-                background-color: transparent;
+      font-style: oblique;
+      color:#8A4484;
+      border: 4px double #FBD2F6;
+      text-shadow:#FBD2F6 0px 5px 5px;
+      background-color: transparent;
+                
+
     }
 
 

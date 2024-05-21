@@ -3,7 +3,7 @@
 .window--about {
 
 
-  height: auto;
+  height: 630px;
 
   @media screen and (min-width: 768px) {
    height: 580px;
@@ -135,7 +135,6 @@
   font-size: 16px;
   color: rgb(0, 0, 0);
   height: auto;
-  cursor: pointer;
   
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -143,10 +142,6 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-}
-
-.skillstext:active {
-  top: 2px;
 }
 
 

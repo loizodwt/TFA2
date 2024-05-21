@@ -1,7 +1,14 @@
 .window {
  
     &--credits {
+      line-height: 140%;
         height: 350px;
+
+        @media screen and (min-width: 768px) {
+          height: 340px;
+        }
+  
+        
             .content {
               display: block;
               margin: 0 auto;
