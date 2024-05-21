@@ -39,7 +39,7 @@
         .audio-image {
           max-width: 200px;
           border-radius: 15px;
-          border: 5px solid #F1DCEF;
+          border: 5px solid #FBD2F6;
         }
       }
 
@@ -93,13 +93,13 @@
     appearance: none;
 
     &::-webkit-slider-runnable-track {
-      background-color: #F1DCEF;
+      background-color: #FBD2F6;
       border-radius: 10px;
       height: 10px; 
     }
 
     &::-moz-range-track {
-      background-color: #F1DCEF;
+      background-color: #FBD2F6;
       height: 10px; 
     }
 
@@ -145,11 +145,11 @@
 
   &::-webkit-progress-bar {
     background-color: #fef6fd;
-    border: 1px solid #F1DCEF;
+    border: 1px solid #FBD2F6;
   }
 
   &::-webkit-progress-value {
-    background-color: #F1DCEF; 
+    background-color: #FBD2F6; 
   }
 
 
