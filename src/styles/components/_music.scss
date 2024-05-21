@@ -1,8 +1,10 @@
 .window--music {
   width: 350px;
+  height: 530px;
 
   @media screen and (min-width: 768px) {
     width: 400px;
+    height: 530px;
   }
   
   
@@ -39,8 +41,9 @@
         .audio-image {
           max-width: 200px;
           border-radius: 15px;
-          border: 5px solid #FBD2F6;
+          box-shadow: 0px 0px 15px 10px #FBD2F6;
         }
+        
       }
 
       .audio-controls {
@@ -54,6 +57,7 @@
           justify-content: space-between;
           align-items: center;
           width: 250px;
+          
 
           button {
             border: none;
@@ -85,8 +89,7 @@
   }
 
   input {
-    width: 100%;
-    height: 100%;
+
     padding: 0;
     margin: 0;
     cursor: pointer;
@@ -135,8 +138,9 @@
 
 
 .audio-controls__progress-bar {
-  margin: 0 auto;
-  width: 80%;
+  margin: 10px auto;
+  margin-top: 20px;
+  width: 200px;
   height: 10px; 
   border: none;
   border-radius: 5px;
