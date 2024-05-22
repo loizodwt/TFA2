@@ -17,26 +17,32 @@ document.addEventListener('DOMContentLoaded', () => {
   function bringToFront(window) {
     const windows = document.querySelectorAll('.window');
     let maxZIndex = 2;
-
+    
     windows.forEach(win => {
       const zIndex = parseInt(win.style.zIndex);
       if (!isNaN(zIndex) && zIndex > maxZIndex) {
         maxZIndex = zIndex;
       }
+
     });
 
     window.style.zIndex = maxZIndex + 1;
+    
+    
+    // window.addEventListener('touchstart', onTouchStart, { passive: false });
 
-    window.addEventListener('touchstart', onTouchStart, { passive: false });
+    // function onTouchStart() {
+    //   windows.forEach(win => {
+    //     win.style.zIndex = parseInt(win.style.zIndex) - 1;
+    //   });
+      
 
-    function onTouchStart() {
-      windows.forEach(win => {
-        win.style.zIndex = parseInt(win.style.zIndex) - 1;
-      });
-      window.style.zIndex = maxZIndex + 1;
-    }
+    //   window.style.zIndex = maxZIndex + 1;
+    // }
   }
+  
 
+  //WINDOWS
   const windows = document.querySelectorAll('.window');
   windows.forEach(window => {
     makeDraggable(window);
@@ -53,11 +59,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+
+  // PROJECTS OUVERTURE
   const projects = document.querySelectorAll('.project');
   let activeProjectDetailsWindows = {};
 
   projects.forEach(project => {
-    project.addEventListener('click', () => {
+    project.addEventListener('click', (e) => {
+      e.stopPropagation();
       const projectId = project.getAttribute('data-id');
       const projectDetailsWindow = document.querySelector(`.window--project-details[data-project-id="${projectId}"]`);
 
@@ -65,7 +74,6 @@ document.addEventListener('DOMContentLoaded', () => {
         activeProjectDetailsWindows[projectId] = projectDetailsWindow;
         activeProjectDetailsWindows[projectId].style.display = 'block';
         gsap.fromTo(projectDetailsWindow, { opacity: 0, y: '-100px', scale: 0 }, { opacity: 1, y: 0, scale: 1, duration: 0.5, ease: 'power2.out' });
-        makeDraggable(projectDetailsWindow); // Utiliser makeDraggable pour les détails de projet
       } else {
         const isActive = activeProjectDetailsWindows[projectId].style.display === 'block';
         if (!isActive) {
@@ -73,6 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
           gsap.fromTo(projectDetailsWindow, { opacity: 0, y: '-100px', scale: 0 }, { opacity: 1, y: 0, scale: 1, duration: 0.5, ease: 'power2.out' });
         }
       }
+      
       bringToFront(activeProjectDetailsWindows[projectId]);
     });
   });
