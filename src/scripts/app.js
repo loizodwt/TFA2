@@ -288,26 +288,47 @@ if (paintWindow) {
   let lastY = 0;
   let currentColor = '#000000'; 
 
-  canvas.addEventListener('mousedown', (e) => {
+  const startPainting = (x, y) => {
     isPainting = true;
-    [lastX, lastY] = [e.offsetX, e.offsetY];
-  });
+    [lastX, lastY] = [x, y];
+  };
 
-  canvas.addEventListener('mousemove', (e) => {
+  const paint = (x, y) => {
     if (!isPainting) return;
     context.strokeStyle = currentColor;
     context.lineJoin = 'round';
     context.lineWidth = 5;
     context.beginPath();
     context.moveTo(lastX, lastY);
-    context.lineTo(e.offsetX, e.offsetY);
+    context.lineTo(x, y);
     context.stroke();
-    [lastX, lastY] = [e.offsetX, e.offsetY];
+    [lastX, lastY] = [x, y];
+  };
+
+  const stopPainting = () => {
+    isPainting = false;
+  };
+
+  canvas.addEventListener('mousedown', (e) => startPainting(e.offsetX, e.offsetY));
+  canvas.addEventListener('mousemove', (e) => paint(e.offsetX, e.offsetY));
+  canvas.addEventListener('mouseup', stopPainting);
+  canvas.addEventListener('mouseout', stopPainting);
+
+  canvas.addEventListener('touchstart', (e) => {
+    const touch = e.touches[0];
+    const rect = canvas.getBoundingClientRect();
+    startPainting(touch.clientX - rect.left, touch.clientY - rect.top);
   });
 
-  canvas.addEventListener('mouseup', () => {
-    isPainting = false;
+  canvas.addEventListener('touchmove', (e) => {
+    const touch = e.touches[0];
+    const rect = canvas.getBoundingClientRect();
+    paint(touch.clientX - rect.left, touch.clientY - rect.top);
+    e.preventDefault();  // Prevent scrolling
   });
+
+  canvas.addEventListener('touchend', stopPainting);
+  canvas.addEventListener('touchcancel', stopPainting);
 
   saveButton.addEventListener('click', () => {
     const image = canvas.toDataURL('image/png');

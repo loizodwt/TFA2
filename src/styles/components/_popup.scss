@@ -61,7 +61,6 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  overflow: hidden;
 
   &.active {
     display: block;
@@ -150,28 +149,34 @@
 
 
 
+
   
-
-
-.lace-image-container {
-  position: relative;
-  width: 200%;
-  height: 50px;
-  overflow: hidden;
-}
-
-.lace-image {
-  position: absolute;
-  width: 100%;
-  height: auto;
-  bottom: 0;
-  left: 5;
-  z-index: -1; 
-  overflow: hidden;
   
-}
-
-
+  
+  .lace-image-container {
+    background-image: url('../../assets/images/dentelle2.png');
+    background-repeat: no-repeat;
+    background-size: auto 100%; /* Ajuste la hauteur de l'image à 100% de la hauteur du conteneur */
+    background-position: bottom left; /* Positionne l'image en bas à gauche */
+  
+    position: relative;
+    width: 100%; /* Conteneur prend 100% de la largeur de son parent */
+    height: 50px; /* Hauteur fixe */
+    overflow: hidden; /* Cache tout débordement */
+  }
+  
+  .lace-image {
+    position: absolute;
+    width: 200%; /* Double la largeur de l'image par rapport au conteneur */
+    height: 100%; /* Hauteur 100% du conteneur */
+    bottom: 0; /* Aligne l'image en bas */
+    left: 0; /* Aligne l'image à gauche */
+    background-image: url('../../assets/images/dentelle2.png');
+    background-repeat: no-repeat;
+    background-size: auto 100%; /* Ajuste la hauteur de l'image à 100% de la hauteur du conteneur */
+    background-position: bottom left; /* Positionne l'image en bas à gauche */
+  }
+  
 
 
 
@@ -264,19 +269,6 @@
   }
 }
 
-
-
-
-
-.lace-image-container {
-  background-image: url(../../assets/images/dentelle2.png);
-  background-repeat: no-repeat;
-  background-size: 100% auto;
-  
-
-
-
-}
 
 
 
