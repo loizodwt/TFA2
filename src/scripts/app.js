@@ -253,17 +253,18 @@ document.addEventListener('DOMContentLoaded', () => {
 // CLICCCCCCCCCCCC
 const clicSound = new Audio('./assets/musiques/clic2.wav');
 
-
 function playClicSound() {
   clicSound.currentTime = 0; 
   clicSound.play();
 }
 
+function isMobileDevice() {
+  return /Mobi|Android/i.test(navigator.userAgent);
+}
 
-document.body.addEventListener('mousedown', playClicSound);
-
-
-
+if (!isMobileDevice()) {
+  document.body.addEventListener('mousedown', playClicSound);
+}
 
 
 
