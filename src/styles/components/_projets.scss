@@ -188,7 +188,6 @@
       font-size: 23px;
       font-weight: bold;
       margin: 0;
-      margin-top: 8px;
       margin-bottom: 16px;
 
       @media (min-width: 768px) {
@@ -204,18 +203,16 @@
       margin-bottom: 8px;
 
       @media (max-width: 768px) {
-        margin-top: 20px;
+        margin: 16px;
       }
   
     }
     .project-details-content__image {
-      width: 150px;
+        display: none;
 
-      margin-top: 20px;
-      margin-right: 20px;
-
-      @media (max-width: 768px) {
+      @media (min-width: 768px) {
          max-width: 350px;
+         display: block;
       }
       
     }
@@ -236,7 +233,9 @@
       text-shadow:#FBD2F6 0px 5px 5px;
       background-color: transparent;
                 
-
+      @media (max-width: 768px) {
+      
+      }
     }
 
 
@@ -245,6 +244,8 @@
         .project-details-content__feature-list {
           list-style: none;
           padding: 0;
+          margin-top: 16px;
+          margin-bottom: 32px;
      
           
           .project-details-content__feature-item {
