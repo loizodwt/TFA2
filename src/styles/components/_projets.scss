@@ -170,18 +170,16 @@
     flex: 1;
     display: block;
     flex-direction: column;
-    padding: 20px;
+    padding: 16px;
 
+    @media (min-width: 768px) {
+      padding: 32px;
+    }
     .project-details-content__header {
-      display: flex;
-      align-items: center;
+      padding-top: 16px;
 
 
-      @media (max-width: 768px) {
-        flex-direction: column-reverse; 
-     
-        justify-content: space-between;
-      }
+
     }
 
     .project-details-content__title {
@@ -196,24 +194,24 @@
     }
 
     .project-details-content__text{
-      max-width: 400px;
-      min-width: 300px;
+      max-width: 800px;
       margin: 0%;
       margin-top: 8px;
-      margin-bottom: 8px;
+      margin-bottom: 32px;
 
-      @media (max-width: 768px) {
-        margin: 16px;
-      }
   
     }
     .project-details-content__image {
         display: none;
 
+
       @media (min-width: 768px) {
-         max-width: 350px;
-         max-height: 250px;
+        padding: 0%;
+        padding-bottom: 8px;
+        padding-top: 8px;
+        margin: 0 auto;
          display: block;
+         width: 540px;
       }
       
     }
