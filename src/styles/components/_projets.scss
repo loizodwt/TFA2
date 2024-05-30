@@ -6,14 +6,6 @@
 .window--projects {
 
 
-  height: 400px;
-  width: 330px;
-
-  @media screen and (min-width: 768px) {
-   height: 400px;
-   width: 530px;
- }
-
     .content {
       padding: 10px;
       display: flex;
@@ -99,6 +91,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
+    top: -2px;
     
     
     .title-bar__controls {
