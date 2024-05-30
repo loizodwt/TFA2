@@ -10,11 +10,14 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      position: relative;
+      top: -10px;
 
       .title-bar__controls {
         display: flex;
         background-color: #ffffff;
         border-radius: 5px;
+        
  
   
         div {

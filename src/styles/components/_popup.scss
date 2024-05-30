@@ -77,6 +77,9 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      position: relative;
+      top: -1px;
+
 
       .title {
         font-weight: bold;
@@ -86,6 +89,7 @@
         display: flex;
         background-color: #ffffff;
         border-radius: 5px;
+        
  
   
         div {
