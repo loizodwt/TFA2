@@ -177,41 +177,41 @@ document.addEventListener('DOMContentLoaded', () => {
   const audioElements = document.querySelectorAll('.audio-player audio');
   const volumeSlider = document.querySelector('.music-section__slider');
   const progressBar = document.querySelector('.audio-controls__progress-bar');
-  
+
   function adjustVolume() {
-    const volumeValue = volumeSlider.value / 100;
+    const volumeValue = volumeSlider.value / 300;
     audioElements.forEach(audio => {
       audio.volume = volumeValue;
     });
   }
-  
+
   volumeSlider.addEventListener('input', adjustVolume);
   adjustVolume();
-  
+
   const musiques = [
     { title: 'Strawberry Cake - Nobonoko', source: './assets/musiques/nobonoko_Strawberry_Cake.wav', image: './assets/images/strawberry_cake.jpg' },
     { title: 'Picobossa - Nobonoko', source: './assets/musiques/nobonoko_Picobossa.wav', image: './assets/images/picobossa.png' },
     { title: 'Aerodynamics - Tohomoko', source: './assets/musiques/Tohomoko_Aerodynamics.wav', image: './assets/images/aerodynamics.jpg' }
   ];
-  
+
   let currentMusicIndex = 0;
-  
+
   function loadMusic(index) {
     const music = musiques[index];
     audioPlayer.src = music.source;
     audioTitle.textContent = music.title;
     audioImage.src = music.image;
   }
-  
+
   window.addEventListener('load', () => {
     loadMusic(currentMusicIndex);
   });
-  
+
   prevButton.addEventListener('click', () => {
     currentMusicIndex = (currentMusicIndex - 1 + musiques.length) % musiques.length;
     loadMusic(currentMusicIndex);
   });
-  
+
   nextButton.addEventListener('click', () => {
     currentMusicIndex = (currentMusicIndex + 1) % musiques.length;
     loadMusic(currentMusicIndex);
@@ -220,30 +220,36 @@ document.addEventListener('DOMContentLoaded', () => {
   audioPlayer.addEventListener('timeupdate', () => {
     const duration = audioPlayer.duration;
     const currentTime = audioPlayer.currentTime;
-    progressBar.value = (currentTime / duration) * 100;
+    
+    if (!isNaN(duration) && isFinite(duration)) {
+      progressBar.value = (currentTime / duration) * 100;
+    }
   });
-  
+
   progressBar.addEventListener('click', (event) => {
     const progressBarWidth = progressBar.clientWidth;
     const clickX = event.clientX - progressBar.getBoundingClientRect().left;
     const duration = audioPlayer.duration;
-    const newPosition = (clickX / progressBarWidth) * duration;
-    audioPlayer.currentTime = newPosition;
+    
+    if (!isNaN(duration) && isFinite(duration)) {
+      const newPosition = (clickX / progressBarWidth) * duration;
+      audioPlayer.currentTime = newPosition;
+    }
   });
-  
+
   const playIcon = document.querySelector('.audio-controls__play-icon');
   const pauseIcon = document.querySelector('.audio-controls__pause-icon');
-  
+
   audioPlayer.addEventListener('play', () => {
     playIcon.style.display = 'none';
     pauseIcon.style.display = 'block';
   });
-  
+
   audioPlayer.addEventListener('pause', () => {
     playIcon.style.display = 'block';
     pauseIcon.style.display = 'none';
   });
-  
+
   document.querySelector('.audio-controls__toggle').addEventListener('click', () => {
     if (audioPlayer.paused) {
       audioPlayer.play();
@@ -251,30 +257,6 @@ document.addEventListener('DOMContentLoaded', () => {
       audioPlayer.pause();
     }
   });
-  
-
-
-
-
-
-
-// CLICCCCCCCCCCCC
-const clicSound = new Audio('./assets/musiques/clic2.wav');
-
-function playClicSound() {
-  clicSound.currentTime = 0; 
-  clicSound.play();
-}
-
-function isMobileDevice() {
-  return /Mobi|Android/i.test(navigator.userAgent);
-}
-
-if (!isMobileDevice()) {
-  document.body.addEventListener('mousedown', playClicSound);
-}
-
-
 
 
 
