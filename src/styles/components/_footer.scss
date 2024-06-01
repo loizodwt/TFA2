@@ -5,14 +5,16 @@ $footer-text-color: #8A4484;
   position: relative;
   background-color: $footer-color;
   color: $footer-text-color;
-  padding: 10px;
+  padding-top: 30px;
+  padding-bottom: 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 0;
 
   @media screen and (min-width: 768px) {
-    padding-top: 0px;
+    padding: 10px;
+
   }
 
   &__content1 {
