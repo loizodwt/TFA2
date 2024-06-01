@@ -142,12 +142,6 @@
 
 
 
-
-
-.filter-buttons {
-
-}
-
 .content.project-list {
  //// background-color: #FBD2F6; 
  //// margin: 10px;
@@ -196,13 +190,34 @@
       max-width: 800px;
       margin: 0%;
       margin-top: 8px;
-      margin-bottom: 32px;
+      margin-bottom: 16px;
+
+      @media screen and (max-width: 768px) {
+        margin-bottom: 32px;
+        }
+
+    }
+
+
+
+
+    .project-details-content__vague {
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      
+        @media screen and (max-width: 768px) {
+          display: none;
+      }
+
+  }
+  
+
 
   
-    }
     .project-details-content__image {
         display: none;
-
+        filter: grayscale(100%);
 
       @media (min-width: 768px) {
         padding: 0%;

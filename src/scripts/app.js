@@ -1,6 +1,14 @@
 "use strict";
 
 document.addEventListener('DOMContentLoaded', () => {
+
+
+
+
+
+
+
+
   const icons = document.querySelectorAll('.icon');
   icons.forEach(icon => {
     icon.addEventListener('click', () => {
