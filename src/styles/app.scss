@@ -17,7 +17,10 @@
 * {
   cursor: url(https://cur.cursors-4u.net/smilies/smi-3/smi268.ani),
   url(https://cur.cursors-4u.net/smilies/smi-3/smi268.gif), auto !important;
-} 
+
+
+ cursor: url(https://cur.cursors-4u.net/smilies/smi-3/smi269.ani), url(https://cur.cursors-4u.net/smilies/smi-3/smi269.gif), auto !important;
+}
 
 
 html, body{
@@ -39,7 +42,7 @@ body {
   background-position: center, center;
 }
 
-/* Media query pour les écrans de bureau */
+
 @media (min-width: 1000px) {
   body {
       background-image: url(../assets/images/loizo3.svg), url(../assets/images/fond9.svg);

@@ -73,12 +73,12 @@
 
 .music-section__volume-control {
   position: absolute;
-  right: 260px;
   bottom: 260px;
   transform: rotate(270deg);
+  right: 0;
 
-  @media screen and (min-width: 768px) {
-    right: 0px;
+  @media screen and (max-width: 768px) {
+    display: none;
   }
 
   input {
@@ -158,22 +158,23 @@
 }
 
 
-
-
-.audio-controls__toggle img {
+.audio-controls__toggle {
   display: flex;
   align-items: center;
-  width: 30px;
-  height: 30px;
-  margin: 0px 32px;
+  justify-content: center;
+}
+
+.audio-controls__toggle img {
+  width: 29px;
+  height: 29px;
+  margin: auto;
 }
 
 .audio-controls__toggle{
 
-  .audio-controls__pause-icon{
+  .audio-controls__pause-icon img{
     display: flex;
     align-items: center;
-    padding-bottom: 3px;
   
   }
   
