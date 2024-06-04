@@ -167,56 +167,56 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
   
-
-
   const audioPlayer = document.querySelector('.audio-player audio');
   const audioTitle = document.querySelector('.audio-title');
+  const audioSubTitle = document.querySelector('.audio-sub-title'); // Sélection du sous-titre
   const audioImage = document.querySelector('.audio-image');
   const prevButton = document.querySelector('.audio-controls__prev-button img');
   const nextButton = document.querySelector('.audio-controls__next-button img');  
   const audioElements = document.querySelectorAll('.audio-player audio');
   const volumeSlider = document.querySelector('.music-section__slider');
   const progressBar = document.querySelector('.audio-controls__progress-bar');
-
+  
   function adjustVolume() {
     const volumeValue = volumeSlider.value / 300;
     audioElements.forEach(audio => {
       audio.volume = volumeValue;
     });
   }
-
+  
   volumeSlider.addEventListener('input', adjustVolume);
   adjustVolume();
-
+  
   const musiques = [
-    { title: 'Strawberry Cake - Nobonoko', source: './assets/musiques/nobonoko_Strawberry_Cake.wav', image: './assets/images/strawberry_cake.jpg' },
-    { title: 'Picobossa - Nobonoko', source: './assets/musiques/nobonoko_Picobossa.wav', image: './assets/images/picobossa.png' },
-    { title: 'Aerodynamics - Tohomoko', source: './assets/musiques/Tohomoko_Aerodynamics.wav', image: './assets/images/aerodynamics.jpg' }
+    { title1: '⭑ ࣪˖  Strawberry Cake ˖ ࣪⭑', title2: 'Nobonoko', source: './assets/musiques/nobonoko_Strawberry_Cake.wav', image: './assets/images/strawberry_cake.jpg' },
+    { title1: '⭑ ࣪˖  Picobossa ˖ ࣪⭑', title2: 'Nobonoko', source: './assets/musiques/nobonoko_Picobossa.wav', image: './assets/images/picobossa.png' },
+    { title1: '⭑ ࣪˖  Aerodynamics ˖ ࣪⭑', title2: 'Tohomoko', source: './assets/musiques/Tohomoko_Aerodynamics.wav', image: './assets/images/aerodynamics.jpg' }
   ];
-
+  
   let currentMusicIndex = 0;
-
+  
   function loadMusic(index) {
     const music = musiques[index];
     audioPlayer.src = music.source;
-    audioTitle.textContent = music.title;
+    audioTitle.textContent = music.title1;
+    audioSubTitle.textContent = music.title2; // Mise à jour du sous-titre
     audioImage.src = music.image;
   }
-
+  
   window.addEventListener('load', () => {
     loadMusic(currentMusicIndex);
   });
-
+  
   prevButton.addEventListener('click', () => {
     currentMusicIndex = (currentMusicIndex - 1 + musiques.length) % musiques.length;
     loadMusic(currentMusicIndex);
   });
-
+  
   nextButton.addEventListener('click', () => {
     currentMusicIndex = (currentMusicIndex + 1) % musiques.length;
     loadMusic(currentMusicIndex);
   });
-
+  
   audioPlayer.addEventListener('timeupdate', () => {
     const duration = audioPlayer.duration;
     const currentTime = audioPlayer.currentTime;
@@ -225,7 +225,7 @@ document.addEventListener('DOMContentLoaded', () => {
       progressBar.value = (currentTime / duration) * 100;
     }
   });
-
+  
   progressBar.addEventListener('click', (event) => {
     const progressBarWidth = progressBar.clientWidth;
     const clickX = event.clientX - progressBar.getBoundingClientRect().left;
@@ -236,20 +236,20 @@ document.addEventListener('DOMContentLoaded', () => {
       audioPlayer.currentTime = newPosition;
     }
   });
-
+  
   const playIcon = document.querySelector('.audio-controls__play-icon');
   const pauseIcon = document.querySelector('.audio-controls__pause-icon');
-
+  
   audioPlayer.addEventListener('play', () => {
     playIcon.style.display = 'none';
     pauseIcon.style.display = 'block';
   });
-
+  
   audioPlayer.addEventListener('pause', () => {
     playIcon.style.display = 'block';
     pauseIcon.style.display = 'none';
   });
-
+  
   document.querySelector('.audio-controls__toggle').addEventListener('click', () => {
     if (audioPlayer.paused) {
       audioPlayer.play();
@@ -257,7 +257,6 @@ document.addEventListener('DOMContentLoaded', () => {
       audioPlayer.pause();
     }
   });
-
 
 
 });
@@ -299,6 +298,11 @@ if (paintWindow) {
     isPainting = false;
   };
 
+  const initializeCanvasBackground = () => {
+    context.fillStyle = '#FFFFFF'; // Set the background color to white
+    context.fillRect(0, 0, canvas.width, canvas.height); // Fill the canvas with white color
+  };
+
   canvas.addEventListener('mousedown', (e) => startPainting(e.offsetX, e.offsetY));
   canvas.addEventListener('mousemove', (e) => paint(e.offsetX, e.offsetY));
   canvas.addEventListener('mouseup', stopPainting);
@@ -337,13 +341,11 @@ if (paintWindow) {
   });
 
   pinkButton.addEventListener('click', () => {
-    currentColor = '#F1DCEF';
+    currentColor = '#FBD2F6';
   });
+
+  initializeCanvasBackground(); 
 }
-
-
-
-
 
 
 
