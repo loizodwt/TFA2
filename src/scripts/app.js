@@ -188,9 +188,9 @@ document.addEventListener('DOMContentLoaded', () => {
   adjustVolume();
   
   const musiques = [
-    { title1: '⭑ ࣪˖  Strawberry Cake ˖ ࣪⭑', title2: 'Nobonoko', source: './assets/musiques/nobonoko_Strawberry_Cake.wav', image: './assets/images/strawberry_cake.jpg' },
-    { title1: '⭑ ࣪˖  Picobossa ˖ ࣪⭑', title2: 'Nobonoko', source: './assets/musiques/nobonoko_Picobossa.wav', image: './assets/images/picobossa.png' },
-    { title1: '⭑ ࣪˖  Aerodynamics ˖ ࣪⭑', title2: 'Tohomoko', source: './assets/musiques/Tohomoko_Aerodynamics.wav', image: './assets/images/aerodynamics.jpg' }
+    { title1: 'ᰔ ⊹˚₊ Strawberry Cake ₊˚⊹ ᰔ' , title2: 'Nobonoko', source: './assets/musiques/nobonoko_Strawberry_Cake.wav', image: './assets/images/strawberry_cake.jpg' },
+    { title1: 'ᰔ ⊹˚₊ Picobossa ₊˚⊹ ᰔ' , title2: 'Nobonoko', source: './assets/musiques/nobonoko_Picobossa.wav', image: './assets/images/picobossa.png' },
+    { title1: 'ᰔ ⊹˚₊ Aerodynamics ₊˚⊹ ᰔ' , title2: 'Tohomoko', source: './assets/musiques/Tohomoko_Aerodynamics.wav', image: './assets/images/aerodynamics.jpg' }
   ];
   
   let currentMusicIndex = 0;

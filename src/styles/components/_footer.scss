@@ -5,8 +5,8 @@ $footer-text-color: #8A4484;
   position: relative;
   background-color: $footer-color;
   color: $footer-text-color;
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -61,6 +61,7 @@ $footer-text-color: #8A4484;
     height: 30px;
     background: inherit;
     filter: blur(10px); 
+    z-index: -1;
   }
 
   .icon {

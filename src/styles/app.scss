@@ -7,7 +7,7 @@
 @import 'components/projets';
 @import 'components/paint';
 @import 'components/credits';
-/*@import 'components/chat';*/
+
 
 
 
@@ -61,9 +61,10 @@ body {
 
 
 .deco-centred {
-  margin: 0%;
+  margin-top: 32px;
   display: flex;
   justify-content: center;
+  font-size: 12px;
 
 }
 
