@@ -202,6 +202,7 @@
 
 
     .project-details-content__vague {
+      margin: 0;
       display: flex;
       justify-content: center;
       text-align: center;
@@ -214,7 +215,6 @@
   
 
 
-  
     .project-details-content__image {
         display: none;
         filter: grayscale(100%);
@@ -224,11 +224,14 @@
         padding-bottom: 8px;
         padding-top: 8px;
         margin: 0 auto;
+        width: 500px;
          display: block;
-         width: 540px;
+
       }
       
     }
+
+    
 
     .project-details-content__button {
       cursor: pointer;
