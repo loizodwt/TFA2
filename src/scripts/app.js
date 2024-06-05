@@ -5,9 +5,9 @@
 
 
 const audioSources = [
-  './assets/musiques/nobonoko_Strawberry_Cake.wav',
-  './assets/musiques/nobonoko_Picobossa.wav',
-  './assets/musiques/Tohomoko_Aerodynamics.wav'
+  'assets/musiques/nobonoko_Strawberry_Cake.wav',
+  'assets/musiques/nobonoko_Picobossa.wav',
+  'assets/musiques/Tohomoko_Aerodynamics.wav'
 ];
 
 audioSources.forEach(source => {
@@ -18,9 +18,9 @@ audioSources.forEach(source => {
 
 
 const imageSources = [
-  './assets/musiques/strawberry_cake.jpg',
-  './assets/musiques/picobossa.png',
-  './assets/musiques/aerodynamics.jpg'
+  'assets/musiques/strawberry_cake.jpg',
+  'assets/musiques/picobossa.png',
+  'assets/musiques/aerodynamics.jpg'
 ];
 
 imageSources.forEach(source => {
@@ -213,9 +213,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const audioImage = document.querySelector('.audio-image');
   
     const musiques = [
-      { title1: 'ᰔ ⊹˚₊ Strawberry Cake ₊˚⊹ ᰔ', title2: 'Nobonoko', source: './assets/musiques/nobonoko_Strawberry_Cake.wav', image: './assets/musiques/strawberry_cake.jpg' },
-      { title1: 'ᰔ ⊹˚₊ Picobossa ₊˚⊹ ᰔ', title2: 'Nobonoko', source: './assets/musiques/nobonoko_Picobossa.wav', image: './assets/musiques/picobossa.png' },
-      { title1: 'ᰔ ⊹˚₊ Aerodynamics ₊˚⊹ ᰔ', title2: 'Tohomoko', source: './assets/musiques/Tohomoko_Aerodynamics.wav', image: './assets/musiques/aerodynamics.jpg' }
+      { title1: 'ᰔ ⊹˚₊ Strawberry Cake ₊˚⊹ ᰔ', title2: 'Nobonoko', source: 'assets/musiques/nobonoko_Strawberry_Cake.wav', image: './assets/musiques/strawberry_cake.jpg' },
+      { title1: 'ᰔ ⊹˚₊ Picobossa ₊˚⊹ ᰔ', title2: 'Nobonoko', source: 'assets/musiques/nobonoko_Picobossa.wav', image: './assets/musiques/picobossa.png' },
+      { title1: 'ᰔ ⊹˚₊ Aerodynamics ₊˚⊹ ᰔ', title2: 'Tohomoko', source: 'assets/musiques/Tohomoko_Aerodynamics.wav', image: './assets/musiques/aerodynamics.jpg' }
     ];
   
     let currentMusicIndex = 0;
