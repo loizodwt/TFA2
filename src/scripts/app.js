@@ -71,17 +71,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.style.zIndex = maxZIndex + 1;
     
-    
-    // window.addEventListener('touchstart', onTouchStart, { passive: false });
-
-    // function onTouchStart() {
-    //   windows.forEach(win => {
-    //     win.style.zIndex = parseInt(win.style.zIndex) - 1;
-    //   });
-      
-
-    //   window.style.zIndex = maxZIndex + 1;
-    // }
   }
   
 
@@ -213,9 +202,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const audioImage = document.querySelector('.audio-image');
   
     const musiques = [
-      { title1: 'ᰔ ⊹˚₊ Strawberry Cake ₊˚⊹ ᰔ', title2: 'Nobonoko', source: 'assets/musiques/nobonoko_Strawberry_Cake.wav', image: './assets/musiques/strawberry_cake.jpg' },
       { title1: 'ᰔ ⊹˚₊ Picobossa ₊˚⊹ ᰔ', title2: 'Nobonoko', source: 'assets/musiques/nobonoko_Picobossa.wav', image: './assets/musiques/picobossa.png' },
-      { title1: 'ᰔ ⊹˚₊ Aerodynamics ₊˚⊹ ᰔ', title2: 'Tohomoko', source: 'assets/musiques/Tohomoko_Aerodynamics.wav', image: './assets/musiques/aerodynamics.jpg' }
+      { title1: 'ᰔ ⊹˚₊ Aerodynamics ₊˚⊹ ᰔ', title2: 'Tohomoko', source: 'assets/musiques/Tohomoko_Aerodynamics.wav', image: './assets/musiques/aerodynamics.jpg' },
+      { title1: 'ᰔ ⊹˚₊ Strawberry Cake ₊˚⊹ ᰔ', title2: 'Nobonoko', source: 'assets/musiques/nobonoko_Strawberry_Cake.wav', image: './assets/musiques/strawberry_cake.jpg' }
+
     ];
   
     let currentMusicIndex = 0;
@@ -233,7 +223,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   
     function adjustVolume() {
-      const volumeValue = volumeSlider.value / 100; // Modifié de 300 à 100 pour correspondre à la plage de valeurs du volume
+      const volumeValue = volumeSlider.value / 400;
       audioPlayer.volume = volumeValue;
     }
   
@@ -331,8 +321,8 @@ if (paintWindow) {
   };
 
   const initializeCanvasBackground = () => {
-    context.fillStyle = '#FFFFFF'; // Set the background color to white
-    context.fillRect(0, 0, canvas.width, canvas.height); // Fill the canvas with white color
+    context.fillStyle = '#FFFFFF'; 
+    context.fillRect(0, 0, canvas.width, canvas.height); 
   };
 
   canvas.addEventListener('mousedown', (e) => startPainting(e.offsetX, e.offsetY));
@@ -350,7 +340,7 @@ if (paintWindow) {
     const touch = e.touches[0];
     const rect = canvas.getBoundingClientRect();
     paint(touch.clientX - rect.left, touch.clientY - rect.top);
-    e.preventDefault();  // Prevent scrolling
+    e.preventDefault(); 
   });
 
   canvas.addEventListener('touchend', stopPainting);
